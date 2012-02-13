@@ -1,0 +1,93 @@
+Profile:
+  tableName:                      t_profile
+  actAs:
+    SluggableExt:
+      fields:                     [ name ]
+    Timestampable:
+  columns:
+    id:                           { type: integer  , length: 20 , primary: true    , autoincrement: true  }
+    name:                         { type: string   , length: 100                   , notnull: true        }
+    description:                  { type: string                                                          }
+  indexes:
+    u_name:                       { fields: [ name ]                               , type: unique         }
+    i_created_at:                 { fields: created_at                                                    }
+    i_updated_at:                 { fields: updated_at                                                                                                   }
+  relations:
+    User:                         { class: User      , local: id         , foreign: profile_id    , type: many                , alias: Users    }
+    Action:                       { class: Action    , local: profile_id , foreign: action_id     , refClass: ActionProfile   , alias: Actions  }
+  options:
+    symfony:                      { filter: false, form: true }
+    boolean_columns:              [ active ]
+ 
+Action:
+  tableName:                      t_action
+  actAs:
+    SluggableExt:
+      fields:                     [ name ]
+    Timestampable:
+  columns:
+    id:                           { type: integer  , length: 20 , primary: true    , autoincrement: true                                                 }
+    name:                         { type: string   , length: 100                   , notnull: true                                                       }
+    description:                  { type: string   , length: 255                   , notnull: true                                                       }
+    route:                        { type: string   , length: 200                   , notnull: true                                                       }
+    param:                        { type: string   , length: 200                                                                                         }
+  indexes:
+    u_param:                      { fields: [ param ]                              , type: unique                                                        }
+    i_created_at:                 { fields: created_at                                                                                                   }
+    i_updated_at:                 { fields: updated_at                                                                                                   }
+  relations:
+    Profile:                      { class: Profile , local: action_id , foreign: profile_id , refClass: ActionProfile   , alias: Profiles }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]
+
+ActionProfile:
+  tableName:                      t_action_profile
+  actAs:
+    Timestampable:
+  columns:
+    action_id:                    { type: integer  , length: 20 , primary: true                                      } # id_action
+    profile_id:                   { type: integer  , length: 20 , primary: true                                      } # id_Perfil
+  indexes:
+    i_created_at:                 { fields: created_at                                                                                                   }
+    i_updated_at:                 { fields: updated_at                                                                                                   }
+  relations:
+    Action:                       { class: Action           , local: action_id            , foreign: id               , type: one                 , alias: Action           , onDelete: CASCADE , onUpdate: CASCADE }
+    Profile:                      { class: Profile          , local: profile_id           , foreign: id               , type: one                 , alias: Profile          , onDelete: CASCADE , onUpdate: CASCADE }
+  options:
+    symfony:                           { filter: false, form: false }
+
+User:
+  tableName:                      t_user
+  actAs:
+    SluggableExt:
+      fields:                     [ username ]
+    Timestampable:
+  columns:
+    id:                           { type: integer                      , length: 20 , primary: true    , autoincrement: true                             }
+    area_id:                      { type: integer  , length: 20        , notnull: true                                                                   }
+    profile_id:                   { type: integer  , length: 20        , notnull: true                                                                   }
+    username:                     { type: string   , length: 100                   , notnull: true                                                       }
+    password:                     { type: string   , length: 255                   , notnull: true                                                       }
+    first_name:                   { type: string   , length: 100                   , notnull: true                                                       }
+    last_name:                    { type: string   , length: 100                   , notnull: true                                                       }
+    email:                        { type: string   , length: 100                   , notnull: true                                                       }
+    phone:                        { type: string   , length: 50                                                                                          }
+    active:                       { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                          }
+    last_access_at:               { type: timestamp                                                                                                      }
+  indexes:
+    u_username:                   { fields: [ username               ]              , type: unique                                                       }
+    u_firstname_lastname:         { fields: [ first_name, last_name ]              , type: unique                                                        }
+    i_active:                     { fields: active                                                                                                       }
+    i_created_at:                 { fields: created_at                                                                                                   }
+    i_updated_at:                 { fields: updated_at                                                                                                   }
+  relations:
+    Profile:                      { class: Profile       , local: profile_id , foreign: id      , type: one  , alias: Profile , onDelete: CASCADE, onUpdate: CASCADE }
+    Document:                     { class: Document      , local: id         , foreign: user_id , type: many                  , alias: Documents                     }
+    Record:                       { class: Record        , local: id         , foreign: user_id , type: many                  , alias: Records                       }
+    RecordLog:                    { class: RecordLog     , local: id         , foreign: user_id , type: many                  , alias: RecordLogs                    }    
+    Area:                         { class: Area          , local: area_id    , foreign: id      , type: one  , alias: Area    , onDelete: CASCADE, onUpdate: CASCADE }
+  options:
+    symfony:                      { filter: false, form: true }
+    boolean_columns:              [ active ]
+

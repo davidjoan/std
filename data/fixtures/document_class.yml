@@ -1,0 +1,33 @@
+DocumentClass:
+  DocumentClass_1:
+    name: 'Carta'
+    description: 'Documento Carta'
+    active: '1'
+  DocumentClass_2:
+    name: 'Expediente'
+    description: 'Documento Expediente'
+    active: '1'    
+  DocumentClass_3:
+    name: 'Oficio'
+    description: 'Documento Oficio'
+    active: '1'      
+  DocumentClass_4:
+    name: 'Fax'
+    description: 'Documento Fax'
+    active: '1'      
+  DocumentClass_5:
+    name: 'Técnico'
+    description: 'Documento Informe Técnico'
+    active: '1'      
+  DocumentClass_6:
+    name: 'Memorándum'
+    description: 'Documento Memorándum'
+    active: '1'      
+  DocumentClass_7:
+    name: 'Email'
+    description: 'Documento Email'
+    active: '1'
+  DocumentClass_7:
+    name: 'Otros'
+    description: 'Documento Otros'
+    active: '1'    

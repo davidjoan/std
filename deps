@@ -1,0 +1,3 @@
+[symfony]
+    git=https://github.com/vjousse/symfony-1.4.git
+	target=lib/vendor/symfony

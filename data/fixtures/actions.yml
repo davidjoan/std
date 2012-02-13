@@ -1,0 +1,123 @@
+Action:
+
+###########################
+######### General #########
+###########################
+
+#default
+  Action_default_disabled:
+    name: 'Default - Disabled'
+    route: default_disabled
+
+  Action_default_error404:
+    name: 'Default - Error 404'
+    route: default_error404
+
+  Action_default_login:
+    name: 'Default - Login'
+    route: default_login
+
+  Action_default_secure:
+    name: 'Default - Secure'
+    route: default_secure
+
+#Error
+
+  Action_error_delete_error:
+    name: 'Error - On Delete Error'
+    route: error_delete_error
+
+#Generic
+
+  Action_generic_get_attribute_value:
+    name: 'Generic - Get Attribute Value'
+    route: generic_get_attribute_value
+
+  Action_generic_add_dynamic_form:
+    name: 'Generic - Add Dynamic Form'
+    route: generic_add_dynamic_form
+
+  Action_generic_remove_dynamic_form:
+    name: 'Generic - Remove Dynamic Form'
+    route: generic_remove_dynamic_form
+
+
+
+###########################
+######### Security ########
+###########################
+
+#Profile
+  Action_Profile1:
+    name: 'Profile - List'
+    description: 'Action that gives the permission to see the list of all the profiles.'
+    route: profile_list
+
+  Action_Profile2:
+    name: 'Profile - Create'
+    description: 'Action that gives the permission to insert new profiles.'
+    route: profile_new
+
+  Action_Profile3:
+    name: 'Profile - Edit'
+    description: 'Action that gives the permission to edit the existing profiles.'
+    route: profile_edit
+
+  Action_Profile4:
+    name: 'Profile - Delete'
+    description: 'Action that gives the permission to edit the existing profiles.'
+    route: profile_delete
+
+#User
+  Action_User1:
+    name: 'User - List'
+    description: 'Action that gives the permission to see the list of all the users.'
+    route: user_list
+
+  Action_User2:
+    name: 'User - Create'
+    description: 'Action that gives the permission to insert new users.'
+    route: user_new
+
+  Action_User3:
+    name: 'User - Edit'
+    description: 'Action that gives the permission to edit the existing users.'
+    route: user_edit
+
+  Action_User4:
+    name: 'User - Delete'
+    description: 'Action that gives the permission to edit the existing users.'
+    route: user_delete
+
+
+#Log
+  Action_log_login:
+    name: 'Log - Login'
+    route: log_login
+
+  Action_log_logout:
+    name: 'Log - Logout'
+    route: log_logout
+
+#Home
+
+  Action_home:
+    name: 'Home'
+    description: 'Home.'
+    route: home
+
+  Action_action_list:
+    name: 'Action - List'
+    route: action_list
+
+  Action_action_new:
+    name: 'Action - New'
+    route: action_new
+
+  Action_action_edit:
+    name: 'Action - Edit'
+    route: action_edit
+
+  Action_action_delete:
+    name: 'Action - Delete'
+    route: action_delete

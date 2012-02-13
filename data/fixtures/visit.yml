@@ -1,0 +1,911 @@
+Visit:
+  Visit_1:
+    remote_address: 190.43.32.112
+    remote_port: '10992'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 13:20:00'
+    created_at: '2010-05-23 13:20:00'
+    updated_at: '2010-05-23 13:20:00'
+  Visit_2:
+    remote_address: 190.43.32.112
+    remote_port: '11000'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 13:20:44'
+    created_at: '2010-05-23 13:20:44'
+    updated_at: '2010-05-23 13:20:44'
+  Visit_3:
+    remote_address: 190.43.32.112
+    remote_port: '11042'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; GTB6.4; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; OfficeLiveConnector.1.3; OfficeLi'
+    datetime: '2010-05-23 13:21:33'
+    created_at: '2010-05-23 13:21:33'
+    updated_at: '2010-05-23 13:21:33'
+  Visit_4:
+    remote_address: 190.43.32.112
+    remote_port: '11049'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; GTB6.4; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)'
+    datetime: '2010-05-23 13:24:13'
+    created_at: '2010-05-23 13:24:13'
+    updated_at: '2010-05-23 13:24:13'
+  Visit_5:
+    remote_address: 190.43.32.112
+    remote_port: '11105'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; GTB6.4; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)'
+    datetime: '2010-05-23 13:27:33'
+    created_at: '2010-05-23 13:27:33'
+    updated_at: '2010-05-23 13:27:33'
+  Visit_6:
+    remote_address: 190.43.32.112
+    remote_port: '11465'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 15:04:43'
+    created_at: '2010-05-23 15:04:43'
+    updated_at: '2010-05-23 15:04:43'
+  Visit_7:
+    remote_address: 190.43.32.112
+    remote_port: '11467'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 15:06:19'
+    created_at: '2010-05-23 15:06:19'
+    updated_at: '2010-05-23 15:06:19'
+  Visit_8:
+    remote_address: 190.43.32.112
+    remote_port: '11608'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 15:10:27'
+    created_at: '2010-05-23 15:10:27'
+    updated_at: '2010-05-23 15:10:27'
+  Visit_9:
+    remote_address: 190.43.32.112
+    remote_port: '11701'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 15:20:03'
+    created_at: '2010-05-23 15:20:04'
+    updated_at: '2010-05-23 15:20:04'
+  Visit_10:
+    remote_address: 190.43.32.112
+    remote_port: '11924'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 15:41:15'
+    created_at: '2010-05-23 15:41:15'
+    updated_at: '2010-05-23 15:41:15'
+  Visit_11:
+    remote_address: 190.43.32.112
+    remote_port: '11925'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 15:41:17'
+    created_at: '2010-05-23 15:41:17'
+    updated_at: '2010-05-23 15:41:17'
+  Visit_12:
+    remote_address: 190.43.32.112
+    remote_port: '11927'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 15:41:55'
+    created_at: '2010-05-23 15:41:56'
+    updated_at: '2010-05-23 15:41:56'
+  Visit_13:
+    remote_address: 190.43.32.112
+    remote_port: '11951'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 15:42:52'
+    created_at: '2010-05-23 15:42:52'
+    updated_at: '2010-05-23 15:42:52'
+  Visit_14:
+    remote_address: 190.43.32.112
+    remote_port: '12771'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 17:07:56'
+    created_at: '2010-05-23 17:07:56'
+    updated_at: '2010-05-23 17:07:56'
+  Visit_15:
+    remote_address: 190.43.32.112
+    remote_port: '12976'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 17:18:07'
+    created_at: '2010-05-23 17:18:07'
+    updated_at: '2010-05-23 17:18:07'
+  Visit_16:
+    remote_address: 85.114.136.243
+    remote_port: '53810'
+    http_user_agent: 'Mozilla/5.0 (compatible; Windows NT 6.0) Gecko/20090624 Firefox/3.5 NjuiceBot'
+    datetime: '2010-05-23 17:27:04'
+    created_at: '2010-05-23 17:27:04'
+    updated_at: '2010-05-23 17:27:04'
+  Visit_17:
+    remote_address: 67.195.112.41
+    remote_port: '50017'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-05-24 01:37:34'
+    created_at: '2010-05-24 01:37:34'
+    updated_at: '2010-05-24 01:37:34'
+  Visit_18:
+    remote_address: 190.41.255.198
+    remote_port: '1950'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 (.NET CLR 3.5.30729)'
+    datetime: '2010-05-24 08:36:14'
+    created_at: '2010-05-24 08:36:14'
+    updated_at: '2010-05-24 08:36:14'
+  Visit_19:
+    remote_address: 190.41.255.198
+    remote_port: '2096'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 (.NET CLR 3.5.30729)'
+    datetime: '2010-05-24 08:40:14'
+    created_at: '2010-05-24 08:40:14'
+    updated_at: '2010-05-24 08:40:14'
+  Visit_20:
+    remote_address: 66.249.71.182
+    remote_port: '40911'
+    http_user_agent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+    datetime: '2010-05-24 16:28:15'
+    created_at: '2010-05-24 16:28:15'
+    updated_at: '2010-05-24 16:28:15'
+  Visit_21:
+    remote_address: 201.230.228.183
+    remote_port: '10888'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-24 21:27:03'
+    created_at: '2010-05-24 21:27:03'
+    updated_at: '2010-05-24 21:27:03'
+  Visit_22:
+    remote_address: 201.230.228.183
+    remote_port: '11956'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-24 22:16:59'
+    created_at: '2010-05-24 22:16:59'
+    updated_at: '2010-05-24 22:16:59'
+  Visit_23:
+    remote_address: 77.88.43.27
+    remote_port: '57222'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-05-24 23:36:02'
+    created_at: '2010-05-24 23:36:02'
+    updated_at: '2010-05-24 23:36:02'
+  Visit_24:
+    remote_address: 119.63.198.7
+    remote_port: '14141'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-05-25 06:14:10'
+    created_at: '2010-05-25 06:14:10'
+    updated_at: '2010-05-25 06:14:10'
+  Visit_25:
+    remote_address: 77.88.43.27
+    remote_port: '62683'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-05-25 06:22:19'
+    created_at: '2010-05-25 06:22:19'
+    updated_at: '2010-05-25 06:22:19'
+  Visit_26:
+    remote_address: 190.253.29.128
+    remote_port: '10169'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; WinuE v6; msn OptimizedIE8;ESCO)'
+    datetime: '2010-05-25 10:17:11'
+    created_at: '2010-05-25 10:17:11'
+    updated_at: '2010-05-25 10:17:11'
+  Visit_27:
+    remote_address: 119.63.198.36
+    remote_port: '26648'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-05-25 12:32:08'
+    created_at: '2010-05-25 12:32:08'
+    updated_at: '2010-05-25 12:32:08'
+  Visit_28:
+    remote_address: 119.63.198.44
+    remote_port: '25221'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-05-25 12:33:14'
+    created_at: '2010-05-25 12:33:14'
+    updated_at: '2010-05-25 12:33:14'
+  Visit_29:
+    remote_address: 190.41.255.198
+    remote_port: '1967'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 (.NET CLR 3.5.30729)'
+    datetime: '2010-05-25 14:21:57'
+    created_at: '2010-05-25 14:21:57'
+    updated_at: '2010-05-25 14:21:57'
+  Visit_30:
+    remote_address: 201.230.114.168
+    remote_port: '10870'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-25 23:49:00'
+    created_at: '2010-05-25 23:49:00'
+    updated_at: '2010-05-25 23:49:00'
+  Visit_31:
+    remote_address: 77.88.43.27
+    remote_port: '50713'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-05-26 01:02:33'
+    created_at: '2010-05-26 01:02:33'
+    updated_at: '2010-05-26 01:02:33'
+  Visit_32:
+    remote_address: 122.163.145.134
+    remote_port: '3242'
+    http_user_agent: ''
+    datetime: '2010-05-26 01:34:43'
+    created_at: '2010-05-26 01:34:43'
+    updated_at: '2010-05-26 01:34:43'
+  Visit_33:
+    remote_address: 122.163.145.134
+    remote_port: '3242'
+    http_user_agent: ''
+    datetime: '2010-05-26 01:34:45'
+    created_at: '2010-05-26 01:34:45'
+    updated_at: '2010-05-26 01:34:45'
+  Visit_34:
+    remote_address: 67.195.112.41
+    remote_port: '56145'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-05-26 06:29:23'
+    created_at: '2010-05-26 06:29:23'
+    updated_at: '2010-05-26 06:29:23'
+  Visit_35:
+    remote_address: 119.63.198.21
+    remote_port: '14007'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-05-26 18:09:15'
+    created_at: '2010-05-26 18:09:15'
+    updated_at: '2010-05-26 18:09:15'
+  Visit_36:
+    remote_address: 77.88.43.27
+    remote_port: '52754'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-05-27 00:49:03'
+    created_at: '2010-05-27 00:49:03'
+    updated_at: '2010-05-27 00:49:03'
+  Visit_37:
+    remote_address: 64.246.165.160
+    remote_port: '25619'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en; rv:1.9.0.13) Gecko/2009073022 Firefox/3.5.2 (.NET CLR 3.5.30729) SurveyBot/2.3 (DomainTools)'
+    datetime: '2010-05-27 07:24:05'
+    created_at: '2010-05-27 07:24:05'
+    updated_at: '2010-05-27 07:24:05'
+  Visit_38:
+    remote_address: 64.246.165.140
+    remote_port: '59192'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en; rv:1.9.0.13) Gecko/2009073022 Firefox/3.5.2 (.NET CLR 3.5.30729) SurveyBot/2.3 (DomainTools)'
+    datetime: '2010-05-27 08:52:49'
+    created_at: '2010-05-27 08:52:49'
+    updated_at: '2010-05-27 08:52:49'
+  Visit_39:
+    remote_address: 72.44.59.33
+    remote_port: '56109'
+    http_user_agent: 'Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.2; WOW64; .NET CLR 2.0.50727)'
+    datetime: '2010-05-27 19:12:42'
+    created_at: '2010-05-27 19:12:42'
+    updated_at: '2010-05-27 19:12:42'
+  Visit_40:
+    remote_address: 77.88.43.27
+    remote_port: '64815'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-05-28 05:21:22'
+    created_at: '2010-05-28 05:21:22'
+    updated_at: '2010-05-28 05:21:22'
+  Visit_41:
+    remote_address: 184.73.133.215
+    remote_port: '42850'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 (.NET CLR 3.5.30729)'
+    datetime: '2010-05-28 06:50:08'
+    created_at: '2010-05-28 06:50:08'
+    updated_at: '2010-05-28 06:50:08'
+  Visit_42:
+    remote_address: 207.46.204.240
+    remote_port: '52836'
+    http_user_agent: 'msnbot/2.0b (+http://search.msn.com/msnbot.htm)'
+    datetime: '2010-05-28 19:29:49'
+    created_at: '2010-05-28 19:29:49'
+    updated_at: '2010-05-28 19:29:49'
+  Visit_43:
+    remote_address: 119.63.198.35
+    remote_port: '38020'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-05-28 21:16:31'
+    created_at: '2010-05-28 21:16:31'
+    updated_at: '2010-05-28 21:16:31'
+  Visit_44:
+    remote_address: 206.248.190.27
+    remote_port: '52893'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 (.NET CLR 3.5.30729)'
+    datetime: '2010-05-28 23:15:46'
+    created_at: '2010-05-28 23:15:46'
+    updated_at: '2010-05-28 23:15:46'
+  Visit_45:
+    remote_address: 206.248.190.27
+    remote_port: '52901'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 (.NET CLR 3.5.30729)'
+    datetime: '2010-05-28 23:15:55'
+    created_at: '2010-05-28 23:15:55'
+    updated_at: '2010-05-28 23:15:55'
+  Visit_46:
+    remote_address: 206.248.190.27
+    remote_port: '52911'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 (.NET CLR 3.5.30729)'
+    datetime: '2010-05-28 23:16:42'
+    created_at: '2010-05-28 23:16:42'
+    updated_at: '2010-05-28 23:16:42'
+  Visit_47:
+    remote_address: 206.248.190.27
+    remote_port: '52913'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 (.NET CLR 3.5.30729)'
+    datetime: '2010-05-28 23:16:54'
+    created_at: '2010-05-28 23:16:54'
+    updated_at: '2010-05-28 23:16:54'
+  Visit_48:
+    remote_address: 174.121.75.42
+    remote_port: '33897'
+    http_user_agent: 'GeoHasher/Nutch-1.0 (GeoHasher Web Search Engine; geohasher.gotdns.org; geo_hasher at yahoo * com)'
+    datetime: '2010-05-29 02:55:02'
+    created_at: '2010-05-29 02:55:03'
+    updated_at: '2010-05-29 02:55:03'
+  Visit_49:
+    remote_address: 194.44.171.189
+    remote_port: '2643'
+    http_user_agent: 'Mozilla/4.0 (compatible; Clever Internet Suite 7.0)'
+    datetime: '2010-05-29 04:28:08'
+    created_at: '2010-05-29 04:28:08'
+    updated_at: '2010-05-29 04:28:08'
+  Visit_50:
+    remote_address: 66.249.71.182
+    remote_port: '42825'
+    http_user_agent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+    datetime: '2010-05-29 08:58:01'
+    created_at: '2010-05-29 08:58:02'
+    updated_at: '2010-05-29 08:58:02'
+  Visit_51:
+    remote_address: 67.195.112.41
+    remote_port: '47500'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-05-30 10:14:40'
+    created_at: '2010-05-30 10:14:40'
+    updated_at: '2010-05-30 10:14:40'
+  Visit_52:
+    remote_address: 83.167.62.166
+    remote_port: '55075'
+    http_user_agent: 'Mozilla/5.0 (compatible; Exabot/3.0 (BiggerBetter); +http://www.exabot.com/go/robot)'
+    datetime: '2010-05-30 21:26:18'
+    created_at: '2010-05-30 21:26:18'
+    updated_at: '2010-05-30 21:26:18'
+  Visit_53:
+    remote_address: 77.88.43.27
+    remote_port: '58335'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-05-30 22:51:49'
+    created_at: '2010-05-30 22:51:49'
+    updated_at: '2010-05-30 22:51:49'
+  Visit_54:
+    remote_address: 67.195.112.41
+    remote_port: '60687'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-05-31 03:36:37'
+    created_at: '2010-05-31 03:36:37'
+    updated_at: '2010-05-31 03:36:37'
+  Visit_55:
+    remote_address: 83.167.62.166
+    remote_port: '48920'
+    http_user_agent: 'Mozilla/5.0 (compatible; Exabot/3.0 (BiggerBetter); +http://www.exabot.com/go/robot)'
+    datetime: '2010-05-31 16:59:22'
+    created_at: '2010-05-31 16:59:22'
+    updated_at: '2010-05-31 16:59:22'
+  Visit_56:
+    remote_address: 67.195.112.41
+    remote_port: '60932'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-01 00:27:47'
+    created_at: '2010-06-01 00:27:47'
+    updated_at: '2010-06-01 00:27:47'
+  Visit_57:
+    remote_address: 77.88.43.27
+    remote_port: '52769'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-01 03:15:05'
+    created_at: '2010-06-01 03:15:05'
+    updated_at: '2010-06-01 03:15:05'
+  Visit_58:
+    remote_address: 174.129.125.243
+    remote_port: '45901'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.6; taptu-downloader) Gecko/20070725 Firefox/2.0.0.6'
+    datetime: '2010-06-01 14:11:36'
+    created_at: '2010-06-01 14:11:36'
+    updated_at: '2010-06-01 14:11:36'
+  Visit_59:
+    remote_address: 174.129.125.243
+    remote_port: '45901'
+    http_user_agent: 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16'
+    datetime: '2010-06-01 14:11:37'
+    created_at: '2010-06-01 14:11:37'
+    updated_at: '2010-06-01 14:11:37'
+  Visit_60:
+    remote_address: 174.129.125.243
+    remote_port: '46066'
+    http_user_agent: 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16'
+    datetime: '2010-06-01 14:11:39'
+    created_at: '2010-06-01 14:11:40'
+    updated_at: '2010-06-01 14:11:40'
+  Visit_61:
+    remote_address: 119.63.198.8
+    remote_port: '15649'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-06-02 00:08:56'
+    created_at: '2010-06-02 00:08:56'
+    updated_at: '2010-06-02 00:08:56'
+  Visit_62:
+    remote_address: 41.207.27.214
+    remote_port: '1732'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 6.0; Windows 98)'
+    datetime: '2010-06-02 04:57:44'
+    created_at: '2010-06-02 04:57:44'
+    updated_at: '2010-06-02 04:57:44'
+  Visit_63:
+    remote_address: 207.46.13.52
+    remote_port: '24997'
+    http_user_agent: 'msnbot/2.0b (+http://search.msn.com/msnbot.htm)'
+    datetime: '2010-06-02 10:05:37'
+    created_at: '2010-06-02 10:05:37'
+    updated_at: '2010-06-02 10:05:37'
+  Visit_64:
+    remote_address: 184.73.37.224
+    remote_port: '34545'
+    http_user_agent: 'Mozilla/5.0 (compatible; spbot/2.0.4; +http://www.seoprofiler.com/bot )'
+    datetime: '2010-06-02 10:29:50'
+    created_at: '2010-06-02 10:29:50'
+    updated_at: '2010-06-02 10:29:50'
+  Visit_65:
+    remote_address: 216.244.153.66
+    remote_port: '60623'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 6.0; es-MX; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 ( .NET CLR 3.5.30729; .NET4.0E)'
+    datetime: '2010-06-02 19:26:06'
+    created_at: '2010-06-02 19:26:06'
+    updated_at: '2010-06-02 19:26:06'
+  Visit_66:
+    remote_address: 200.16.7.52
+    remote_port: '37934'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; es-ES; rv:1.9.2) Gecko/20100115 Firefox/3.6'
+    datetime: '2010-06-03 11:53:05'
+    created_at: '2010-06-03 11:53:05'
+    updated_at: '2010-06-03 11:53:05'
+  Visit_67:
+    remote_address: 66.249.71.182
+    remote_port: '44006'
+    http_user_agent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+    datetime: '2010-06-03 17:41:35'
+    created_at: '2010-06-03 17:41:35'
+    updated_at: '2010-06-03 17:41:35'
+  Visit_68:
+    remote_address: 77.88.43.27
+    remote_port: '64242'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-03 23:20:44'
+    created_at: '2010-06-03 23:20:44'
+    updated_at: '2010-06-03 23:20:44'
+  Visit_69:
+    remote_address: 66.249.71.182
+    remote_port: '46687'
+    http_user_agent: 'DoCoMo/2.0 N905i(c100;TB;W24H16) (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)'
+    datetime: '2010-06-04 05:55:49'
+    created_at: '2010-06-04 05:55:49'
+    updated_at: '2010-06-04 05:55:49'
+  Visit_70:
+    remote_address: 216.244.153.66
+    remote_port: '62866'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 6.0; es-MX; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 ( .NET CLR 3.5.30729; .NET4.0E)'
+    datetime: '2010-06-04 09:45:22'
+    created_at: '2010-06-04 09:45:22'
+    updated_at: '2010-06-04 09:45:22'
+  Visit_71:
+    remote_address: 119.63.198.12
+    remote_port: '55426'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-06-04 10:42:12'
+    created_at: '2010-06-04 10:42:12'
+    updated_at: '2010-06-04 10:42:12'
+  Visit_72:
+    remote_address: 38.99.96.173
+    remote_port: '34766'
+    http_user_agent: 'Mozilla/5.0 (compatible; ScoutJet; +http://www.scoutjet.com/)'
+    datetime: '2010-06-04 11:13:56'
+    created_at: '2010-06-04 11:13:56'
+    updated_at: '2010-06-04 11:13:56'
+  Visit_73:
+    remote_address: 74.52.245.146
+    remote_port: '32564'
+    http_user_agent: 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0'
+    datetime: '2010-06-04 16:25:07'
+    created_at: '2010-06-04 16:25:07'
+    updated_at: '2010-06-04 16:25:07'
+  Visit_74:
+    remote_address: 74.52.245.146
+    remote_port: '32565'
+    http_user_agent: 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0'
+    datetime: '2010-06-04 16:25:07'
+    created_at: '2010-06-04 16:25:07'
+    updated_at: '2010-06-04 16:25:07'
+  Visit_75:
+    remote_address: 66.249.71.182
+    remote_port: '60680'
+    http_user_agent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+    datetime: '2010-06-05 05:19:27'
+    created_at: '2010-06-05 05:19:27'
+    updated_at: '2010-06-05 05:19:27'
+  Visit_76:
+    remote_address: 173.89.90.70
+    remote_port: '51558'
+    http_user_agent: 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3'
+    datetime: '2010-06-05 11:17:25'
+    created_at: '2010-06-05 11:17:25'
+    updated_at: '2010-06-05 11:17:25'
+  Visit_77:
+    remote_address: 66.249.71.182
+    remote_port: '49297'
+    http_user_agent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+    datetime: '2010-06-05 14:58:26'
+    created_at: '2010-06-05 14:58:26'
+    updated_at: '2010-06-05 14:58:26'
+  Visit_78:
+    remote_address: 67.195.112.41
+    remote_port: '36027'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-05 22:46:57'
+    created_at: '2010-06-05 22:46:57'
+    updated_at: '2010-06-05 22:46:57'
+  Visit_79:
+    remote_address: 216.145.5.42
+    remote_port: '29259'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en; rv:1.9.0.13) Gecko/2009073022 Firefox/3.5.2 (.NET CLR 3.5.30729) SurveyBot/2.3 (DomainTools)'
+    datetime: '2010-06-06 00:00:18'
+    created_at: '2010-06-06 00:00:18'
+    updated_at: '2010-06-06 00:00:18'
+  Visit_80:
+    remote_address: 64.246.161.30
+    remote_port: '21061'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en; rv:1.9.0.13) Gecko/2009073022 Firefox/3.5.2 (.NET CLR 3.5.30729) SurveyBot/2.3 (DomainTools)'
+    datetime: '2010-06-06 00:41:36'
+    created_at: '2010-06-06 00:41:36'
+    updated_at: '2010-06-06 00:41:36'
+  Visit_81:
+    remote_address: 64.202.161.41
+    remote_port: '30744'
+    http_user_agent: ''
+    datetime: '2010-06-06 16:28:14'
+    created_at: '2010-06-06 16:28:14'
+    updated_at: '2010-06-06 16:28:14'
+  Visit_82:
+    remote_address: 64.202.161.41
+    remote_port: '30954'
+    http_user_agent: ''
+    datetime: '2010-06-06 16:28:14'
+    created_at: '2010-06-06 16:28:14'
+    updated_at: '2010-06-06 16:28:14'
+  Visit_83:
+    remote_address: 86.77.131.84
+    remote_port: '64088'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; OfficeLiveConnector.1.3; OfficeLivePatch.0.0; InfoPath.1)'
+    datetime: '2010-06-06 16:53:06'
+    created_at: '2010-06-06 16:53:06'
+    updated_at: '2010-06-06 16:53:06'
+  Visit_84:
+    remote_address: 67.195.112.41
+    remote_port: '58188'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-07 08:08:21'
+    created_at: '2010-06-07 08:08:21'
+    updated_at: '2010-06-07 08:08:21'
+  Visit_85:
+    remote_address: 77.88.43.27
+    remote_port: '58398'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-07 17:26:32'
+    created_at: '2010-06-07 17:26:32'
+    updated_at: '2010-06-07 17:26:32'
+  Visit_86:
+    remote_address: 67.195.112.41
+    remote_port: '52539'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-07 17:39:32'
+    created_at: '2010-06-07 17:39:32'
+    updated_at: '2010-06-07 17:39:32'
+  Visit_87:
+    remote_address: 77.88.43.27
+    remote_port: '56190'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-07 20:37:15'
+    created_at: '2010-06-07 20:37:15'
+    updated_at: '2010-06-07 20:37:15'
+  Visit_88:
+    remote_address: 95.27.193.103
+    remote_port: '52312'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)'
+    datetime: '2010-06-08 06:06:30'
+    created_at: '2010-06-08 06:06:30'
+    updated_at: '2010-06-08 06:06:30'
+  Visit_89:
+    remote_address: 67.195.112.41
+    remote_port: '42433'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-08 14:19:04'
+    created_at: '2010-06-08 14:19:04'
+    updated_at: '2010-06-08 14:19:04'
+  Visit_90:
+    remote_address: 174.129.71.24
+    remote_port: '55777'
+    http_user_agent: 'Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)'
+    datetime: '2010-06-08 23:19:27'
+    created_at: '2010-06-08 23:19:27'
+    updated_at: '2010-06-08 23:19:27'
+  Visit_91:
+    remote_address: 174.129.71.24
+    remote_port: '49036'
+    http_user_agent: 'Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)'
+    datetime: '2010-06-08 23:44:10'
+    created_at: '2010-06-08 23:44:10'
+    updated_at: '2010-06-08 23:44:10'
+  Visit_92:
+    remote_address: 119.63.198.48
+    remote_port: '41943'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-06-09 04:14:43'
+    created_at: '2010-06-09 04:14:43'
+    updated_at: '2010-06-09 04:14:43'
+  Visit_93:
+    remote_address: 64.202.161.41
+    remote_port: '23926'
+    http_user_agent: ''
+    datetime: '2010-06-10 08:04:42'
+    created_at: '2010-06-10 08:04:42'
+    updated_at: '2010-06-10 08:04:42'
+  Visit_94:
+    remote_address: 64.202.161.41
+    remote_port: '23461'
+    http_user_agent: ''
+    datetime: '2010-06-10 08:04:42'
+    created_at: '2010-06-10 08:04:42'
+    updated_at: '2010-06-10 08:04:42'
+  Visit_95:
+    remote_address: 67.195.112.41
+    remote_port: '52057'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-10 11:36:17'
+    created_at: '2010-06-10 11:36:17'
+    updated_at: '2010-06-10 11:36:17'
+  Visit_96:
+    remote_address: 200.16.7.52
+    remote_port: '55290'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; es-ES; rv:1.9.2) Gecko/20100115 Firefox/3.6'
+    datetime: '2010-06-10 12:06:51'
+    created_at: '2010-06-10 12:06:51'
+    updated_at: '2010-06-10 12:06:51'
+  Visit_97:
+    remote_address: 66.249.71.182
+    remote_port: '59224'
+    http_user_agent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+    datetime: '2010-06-10 14:13:40'
+    created_at: '2010-06-10 14:13:40'
+    updated_at: '2010-06-10 14:13:40'
+  Visit_98:
+    remote_address: 82.146.51.167
+    remote_port: '54888'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.0.6) Gecko/2009011913 Firefox/3.0.6'
+    datetime: '2010-06-10 16:49:22'
+    created_at: '2010-06-10 16:49:22'
+    updated_at: '2010-06-10 16:49:22'
+  Visit_99:
+    remote_address: 207.46.204.181
+    remote_port: '41448'
+    http_user_agent: 'msnbot/2.0b (+http://search.msn.com/msnbot.htm)'
+    datetime: '2010-06-11 03:27:09'
+    created_at: '2010-06-11 03:27:09'
+    updated_at: '2010-06-11 03:27:09'
+  Visit_100:
+    remote_address: 77.88.43.27
+    remote_port: '54313'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-11 22:36:03'
+    created_at: '2010-06-11 22:36:03'
+    updated_at: '2010-06-11 22:36:03'
+  Visit_101:
+    remote_address: 77.88.43.27
+    remote_port: '62038'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-12 03:49:40'
+    created_at: '2010-06-12 03:49:40'
+    updated_at: '2010-06-12 03:49:40'
+
+    remote_address: 74.225.21.174
+    remote_port: '50912'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; GTB6.5; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.21022; .NET CLR 3.5.30729; .NET CLR 3.0.30729; InfoPath.2)'
+    datetime: '2010-06-12 19:56:53'
+    created_at: '2010-06-12 19:56:53'
+    updated_at: '2010-06-12 19:56:53'
+  Visit_103:
+    remote_address: 74.225.21.174
+    remote_port: '50927'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; GTB6.5; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.21022; .NET CLR 3.5.30729; .NET CLR 3.0.30729; InfoPath.2)'
+    datetime: '2010-06-12 19:57:09'
+    created_at: '2010-06-12 19:57:09'
+    updated_at: '2010-06-12 19:57:09'
+  Visit_104:
+    remote_address: 203.6.203.80
+    remote_port: '33151'
+    http_user_agent: 'CatchBot/2.0; +http://www.catchbot.com'
+    datetime: '2010-06-12 20:44:36'
+    created_at: '2010-06-12 20:44:36'
+    updated_at: '2010-06-12 20:44:36'
+  Visit_105:
+    remote_address: 124.217.72.92
+    remote_port: '65146'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; GTB6.5; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.2; .NET CLR 1.1.4322; AskTB5.6)'
+    datetime: '2010-06-13 09:33:28'
+    created_at: '2010-06-13 09:33:28'
+    updated_at: '2010-06-13 09:33:28'
+  Visit_106:
+    remote_address: 208.115.111.244
+    remote_port: '55387'
+    http_user_agent: 'Mozilla/5.0 (compatible; DotBot/1.1; http://www.dotnetdotcom.org/, crawler@dotnetdotcom.org)'
+    datetime: '2010-06-13 11:48:40'
+    created_at: '2010-06-13 11:48:40'
+    updated_at: '2010-06-13 11:48:40'
+  Visit_107:
+    remote_address: 66.249.71.182
+    remote_port: '52112'
+    http_user_agent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+    datetime: '2010-06-13 11:52:45'
+    created_at: '2010-06-13 11:52:45'
+    updated_at: '2010-06-13 11:52:45'
+  Visit_108:
+    remote_address: 67.195.112.41
+    remote_port: '56091'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-14 14:22:05'
+    created_at: '2010-06-14 14:22:05'
+    updated_at: '2010-06-14 14:22:05'
+  Visit_109:
+    remote_address: 67.195.112.41
+    remote_port: '47330'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-14 17:46:53'
+    created_at: '2010-06-14 17:46:53'
+    updated_at: '2010-06-14 17:46:53'
+  Visit_110:
+    remote_address: 67.195.112.41
+    remote_port: '55774'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-15 14:23:26'
+    created_at: '2010-06-15 14:23:26'
+    updated_at: '2010-06-15 14:23:26'
+  Visit_111:
+    remote_address: 64.246.187.42
+    remote_port: '61551'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en; rv:1.9.0.13) Gecko/2009073022 Firefox/3.5.2 (.NET CLR 3.5.30729) SurveyBot/2.3 (DomainTools)'
+    datetime: '2010-06-15 19:10:54'
+    created_at: '2010-06-15 19:10:54'
+    updated_at: '2010-06-15 19:10:54'
+  Visit_112:
+    remote_address: 77.88.43.27
+    remote_port: '55970'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-15 21:28:26'
+    created_at: '2010-06-15 21:28:26'
+    updated_at: '2010-06-15 21:28:26'
+  Visit_113:
+    remote_address: 119.63.198.18
+    remote_port: '42958'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-06-16 06:24:42'
+    created_at: '2010-06-16 06:24:42'
+    updated_at: '2010-06-16 06:24:42'
+  Visit_114:
+    remote_address: 77.88.43.27
+    remote_port: '65376'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-16 07:26:00'
+    created_at: '2010-06-16 07:26:00'
+    updated_at: '2010-06-16 07:26:00'
+  Visit_115:
+    remote_address: 189.204.64.66
+    remote_port: '1704'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727; InfoPath.1)'
+    datetime: '2010-06-16 11:22:16'
+    created_at: '2010-06-16 11:22:16'
+    updated_at: '2010-06-16 11:22:16'
+  Visit_116:
+    remote_address: 216.145.5.42
+    remote_port: '19626'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en; rv:1.9.0.13) Gecko/2009073022 Firefox/3.5.2 (.NET CLR 3.5.30729) SurveyBot/2.3 (DomainTools)'
+    datetime: '2010-06-16 13:52:40'
+    created_at: '2010-06-16 13:52:40'
+    updated_at: '2010-06-16 13:52:40'
+  Visit_117:
+    remote_address: 174.129.71.40
+    remote_port: '51046'
+    http_user_agent: ''
+    datetime: '2010-06-16 17:42:13'
+    created_at: '2010-06-16 17:42:13'
+    updated_at: '2010-06-16 17:42:13'
+  Visit_118:
+    remote_address: 77.88.43.27
+    remote_port: '57790'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-17 23:56:11'
+    created_at: '2010-06-17 23:56:11'
+    updated_at: '2010-06-17 23:56:11'
+  Visit_119:
+    remote_address: 207.46.199.42
+    remote_port: '15162'
+    http_user_agent: 'msnbot/2.0b (+http://search.msn.com/msnbot.htm)'
+    datetime: '2010-06-18 06:58:14'
+    created_at: '2010-06-18 06:58:14'
+    updated_at: '2010-06-18 06:58:14'
+  Visit_120:
+    remote_address: 75.101.205.55
+    remote_port: '39540'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.2; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)'
+    datetime: '2010-06-18 13:46:57'
+    created_at: '2010-06-18 13:46:57'
+    updated_at: '2010-06-18 13:46:57'
+  Visit_121:
+    remote_address: 184.73.29.112
+    remote_port: '43002'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.5.30729; MSN Optimized;US)'
+    datetime: '2010-06-18 18:25:00'
+    created_at: '2010-06-18 18:25:00'
+    updated_at: '2010-06-18 18:25:00'
+  Visit_122:
+    remote_address: 72.94.249.38
+    remote_port: '28926'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)'
+    datetime: '2010-06-18 19:08:51'
+    created_at: '2010-06-18 19:08:51'
+    updated_at: '2010-06-18 19:08:51'
+  Visit_123:
+    remote_address: 38.105.83.12
+    remote_port: '1033'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 7.0;  Windows NT 5.2)'
+    datetime: '2010-06-18 19:13:08'
+    created_at: '2010-06-18 19:13:08'
+    updated_at: '2010-06-18 19:13:08'
+  Visit_124:
+    remote_address: 38.105.83.12
+    remote_port: '2669'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 7.0;  Windows NT 5.2)'
+    datetime: '2010-06-18 19:13:31'
+    created_at: '2010-06-18 19:13:31'
+    updated_at: '2010-06-18 19:13:31'
+  Visit_125:
+    remote_address: 67.195.112.41
+    remote_port: '38129'
+    http_user_agent: 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
+    datetime: '2010-06-18 21:30:21'
+    created_at: '2010-06-18 21:30:21'
+    updated_at: '2010-06-18 21:30:21'
+  Visit_126:
+    remote_address: 119.63.198.27
+    remote_port: '45926'
+    http_user_agent: 'Baiduspider+(+http://www.baidu.jp/spider/)'
+    datetime: '2010-06-19 16:23:01'
+    created_at: '2010-06-19 16:23:01'
+    updated_at: '2010-06-19 16:23:01'
+  Visit_127:
+    remote_address: 88.214.206.81
+    remote_port: '56131'
+    http_user_agent: 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3'
+    datetime: '2010-06-20 15:26:14'
+    created_at: '2010-06-20 15:26:14'
+    updated_at: '2010-06-20 15:26:14'
+  Visit_128:
+    remote_address: 77.88.43.27
+    remote_port: '60202'
+    http_user_agent: 'Yandex/1.01.001 (compatible; Win16; I)'
+    datetime: '2010-06-20 22:34:13'
+    created_at: '2010-06-20 22:34:13'
+    updated_at: '2010-06-20 22:34:13'
+  Visit_129:
+    remote_address: 174.129.122.227
+    remote_port: '38417'
+    http_user_agent: 'Mozilla/5.0 (compatible; spbot/2.0.4; +http://www.seoprofiler.com/bot )'
+    datetime: '2010-06-21 06:24:11'
+    created_at: '2010-06-21 06:24:11'
+    updated_at: '2010-06-21 06:24:11'
+  Visit_130:
+    remote_address: 207.46.13.140
+    remote_port: '47557'
+    http_user_agent: 'msnbot/2.0b (+http://search.msn.com/msnbot.htm)'
+    datetime: '2010-06-21 12:00:38'
+    created_at: '2010-06-21 12:00:38'
+    updated_at: '2010-06-21 12:00:38'

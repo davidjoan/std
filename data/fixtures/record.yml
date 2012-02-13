@@ -1,0 +1,12 @@
+Record:
+  Record_1:
+    FromArea: Area_1
+    ToArea:   Area_4
+    User:     User_1
+    code:     00001000
+    subject:  'Revisalo'
+    time_limit: 5
+    description: 'jajaja'
+    status:      'P'
+    active:      1
+    

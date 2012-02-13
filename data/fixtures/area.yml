@@ -1,0 +1,44 @@
+Area:
+  Area_1:
+    name: 'Gerencia General'
+    Representative: Representative_1
+    description: '<p></p>'
+    active: '1'
+    rank: 1
+    children:
+      Area_2:
+        name: 'Asistencia de Gerencia'
+        Representative: Representative_2
+        description: '<p></p>'
+        active: '1'
+        rank: 2
+      Area_3:
+        name: 'Administración'
+        Representative: Representative_3
+        description: '<p></p>'
+        active: '1'
+        rank: 3
+      Area_4:
+        name: 'Asistencia de Administración'
+        Representative: Representative_4
+        description: '<p></p>'          
+        active: '1'
+        rank: 4
+      Area_5:
+        name: 'Jefatura de Supervisión'
+        Representative: Representative_5
+        description: '<p></p>'          
+        active: '1'
+        rank: 5
+      Area_6:
+        name: 'Asistencia de Supervision'
+        Representative: Representative_6
+        description: '<p></p>'
+        active: '0'
+        rank: 6
+      Area_7:
+        name: 'Tecnico'
+        Representative: Representative_7
+        description: '<p></p>'
+        active: '0'
+        rank: 7       

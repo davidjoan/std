@@ -1,0 +1,25 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Sistema de Tramite Documentario - SERING S.A.C.
+    description:  std
+    keywords:     std
+    language:     es
+    robots:       index, follow
+
+  stylesheets:
+    - general/main.css:                 { position: first }
+    - backend/general.css:              { position: first }
+    - backend/button.css:               { position: first }
+    - general/jquery-ui-1.8.custom.css: { position: first }
+    
+  javascripts:
+    - jquery/jquery-1.4.2.min.js
+    - jquery/jquery-ui-1.8.min.js
+    - general/general.js
+    - jquery/i18n/jquery-ui-i18n.js
+
+  has_layout:     true
+  layout:         layout

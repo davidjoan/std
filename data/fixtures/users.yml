@@ -1,0 +1,28 @@
+User:
+  User_1:
+    Profile: Profile_1
+    Area: Area_1
+    username: admin
+    password: abcd
+    first_name: David
+    last_name: Tataje
+    email: dtataje@datasolutions.pe
+    active: '1'
+  User_2:
+    Profile: Profile_1
+    Area: Area_1
+    username: david
+    password: abcd
+    first_name: David Joan
+    last_name: Tataje Mendoza
+    email: dtataje@datasolutions.pe
+    active: '1'    
+  User_3:
+    Profile: Profile_1
+    Area: Area_1
+    username: emilio
+    password: abcd
+    first_name: Emilio
+    last_name: Lachira
+    email: dtataje@datasolutions.pe
+    active: '1'      

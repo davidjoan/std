@@ -1,0 +1,164 @@
+Representative:
+  tableName:                           t_representative
+  actAs:
+    SluggableExt:                      { fields: [ firstname, lastname ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    dni:                               { type: string   , length: 20                    , notnull: true                                                        }
+    firstname:                         { type: string   , length: 200                   , notnull: true                                                        } 
+    lastname:                          { type: string   , length: 200                   , notnull: true                                                        }
+    description:                       { type: string   , length: 1000                   , notnull: false                                                      }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
+  relations:
+    Area:                              { class: Area     , local: id         , foreign: representative_id , type: many   , alias: Areas                        }
+    Document:                          { class: Document , local: id         , foreign: representative_id , type: many   , alias: Documents                    }
+  indexes:
+    i_firstname:                       { fields: [ firstname ]                                                                                                      }
+    i_active:                          { fields: [ active ]                                                                                                    }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]
+
+Area:
+  tableName:                           t_area
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+    NestedSet:
+      hasManyRoots: true
+      rootColumnName: root_id
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    representative_id:                 { type: integer  , length: 20        , notnull: true                                                                    }
+    rank:                              { type: integer  , length: 20                                                                                           }
+    name:                              { type: string   , length: 50                    , notnull: true                                                        }
+    description:                       { type: string   , length: 5000                  , notnull: false                                                       }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           } 
+  indexes:
+    i_active:                          { fields: [ active ]                                                                                                    }
+  relations:
+    Representative:                    { class: Representative , local: representative_id , foreign: id      , type: one  , alias: Representative , onDelete: CASCADE, onUpdate: CASCADE }
+    FromRecord:                        { class: Record  , local: id         , foreign: from_area_id    , type: many            , alias: FromRecords  }
+    ToRecord:                          { class: Record  , local: id         , foreign: to_area_id      , type: many            , alias: ToRecords  }
+    User:                              { class: User      , local: id       , foreign: area_id    , type: many            , alias: Users    }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]
+    
+DocumentClass:
+  tableName:                           t_document_class
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    name:                              { type: string   , length: 200                   , notnull: true                                                        } 
+    description:                       { type: string   , length: 1000                   , notnull: true                                                       }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
+  relations:
+    Document:                          { class: Document  , local: id         , foreign: document_class_id    , type: many      , alias: Documents             }
+  indexes:
+    i_name:                            { fields: [ name ]                                                                                                      }
+    i_active:                          { fields: [ active ]                                                                                                    }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]
+  
+Record:
+  tableName:                           t_record
+  actAs:
+    SluggableExt:                      { fields: [ code ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    from_area_id:                      { type: integer  , length: 20                    , notnull: true                                                        }
+    to_area_id:                        { type: integer  , length: 20                    , notnull: true                                                        }
+    user_id:                           { type: integer  , length: 20                    , notnull: true                                                        }
+    code:                              { type: string   , length: 20                    , notnull: true                                                        }
+    subject:                           { type: string   , length: 250                   , notnull: true                                                        }
+    time_limit:                        { type: integer  , length: 20                                                                                           }
+    description:                       { type: string   , length: 1000                  , notnull: true                                                        }
+    status:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
+  relations:
+    User:                              { class: User              , local: user_id      , foreign: id         , type: one  , alias: User    , onDelete: CASCADE, onUpdate: CASCADE   }
+    FromArea:                          { class: Area              , local: from_area_id , foreign: id         , type: one  , alias: FromArea, onDelete: CASCADE, onUpdate: CASCADE   }
+    ToArea:                            { class: Area              , local: to_area_id   , foreign: id         , type: one  , alias: ToArea  , onDelete: CASCADE, onUpdate: CASCADE   }
+    Document:                          { class: Document          , local: id           , foreign: record_id , type: many                   , alias: Documents                       }
+    RecordLog:                         { class: RecordLog         , local: id           , foreign: record_id , type: many                   , alias: RecordLogs                      }
+  indexes:
+    #i_lastname:                        { fields: [ lastname ]                                                                                                  }
+    i_active:                          { fields: [ active ]                                                                                                    }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]
+    
+RecordLog:
+  tableName:                           t_record_log
+  actAs:
+    SluggableExt:                      { fields: [ code ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    record_id:                         { type: integer  , length: 20                    , notnull: true                                                        }
+    user_id:                           { type: integer  , length: 20                    , notnull: true                                                        }    
+    from_area_id:                      { type: integer  , length: 20                    , notnull: true                                                        }
+    to_area_id:                        { type: integer  , length: 20                    , notnull: true                                                        }
+    code:                              { type: string   , length: 20                    , notnull: true                                                        }
+    subject:                           { type: string   , length: 250                   , notnull: true                                                        }    
+    time_limit:                        { type: integer  , length: 20                                                                                           }    
+    description:                       { type: string   , length: 1000                  , notnull: true                                                        }
+    status:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
+  relations:
+    Record:                            { class: Record            , local: record_id , foreign: id      , type: one  , alias: Record , onDelete: CASCADE, onUpdate: CASCADE }
+    User:                              { class: User              , local: user_id   , foreign: id      , type: one  , alias: User   , onDelete: CASCADE, onUpdate: CASCADE }
+    FromArea:                          { class: Area              , local: from_area_id   , foreign: id         , type: one  , alias: FromArea , onDelete: CASCADE, onUpdate: CASCADE   }
+    ToArea:                            { class: Area              , local: to_area_id   , foreign: id         , type: one  , alias: ToArea , onDelete: CASCADE, onUpdate: CASCADE   }
+    #Document:                          { class: Document          , local: id         , foreign: record_id , type: many                 , alias: Documents                     }
+  indexes:
+    #i_lastname:                        { fields: [ lastname ]                                                                                                  }
+    i_active:                          { fields: [ active ]                                                                                                    }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]    
+    
+Document:
+  tableName:                           t_document
+  actAs:
+    SluggableExt:                      { fields: [ code ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    record_id:                         { type: integer  , length: 20        , notnull: true                                                                    }
+    user_id:                           { type: integer  , length: 20                    , notnull: true                                                        }    
+    area_id:                           { type: integer  , length: 20                    , notnull: true                                                        }    
+    representative_id:                 { type: integer  , length: 20        , notnull: true                                                                    }
+    document_class_id:                 { type: integer  , length: 20        , notnull: true                                                                    }
+    code:                              { type: string   , length: 50                    , notnull: true                                                        }
+    issue:                             { type: string   , length: 200                   , notnull: true                                                        }
+    qty:                               { type: integer  , length: 10                                    , default: 0                                           }
+    type:                              { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
+    description:                       { type: string   , length: 1000                  , notnull: true                                                        }
+    observations:                      { type: string   , length: 1000                  , notnull: true                                                        }
+    main:                              { type: string   , length: 1000                  , notnull: true                                                        }
+    reception_method:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 'R'                                         }
+    document_date:                     { type: timestamp                                                                                                       }
+    reception_date:                    { type: timestamp                                                                                                       }
+    registration_type:                 { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
+  relations:
+    Record:                            { class: Record           , local: record_id         , foreign: id      , type: one  , alias: Record         , onDelete: CASCADE, onUpdate: CASCADE }
+    User:                              { class: User             , local: user_id           , foreign: id      , type: one  , alias: User           , onDelete: CASCADE, onUpdate: CASCADE }
+    Area:                              { class: Area             , local: area_id           , foreign: id      , type: one  , alias: Area           , onDelete: CASCADE, onUpdate: CASCADE }
+    DocumentClass:                     { class: DocumentClass    , local: document_class_id , foreign: id      , type: one  , alias: DocumentClass  , onDelete: CASCADE, onUpdate: CASCADE }
+    Representative:                    { class: Representative   , local: representative_id , foreign: id      , type: one  , alias: Representative , onDelete: CASCADE, onUpdate: CASCADE }
+  indexes:
+    i_code:                            { fields: [ code ]                                                                                    }
+    u_code:                            { fields: [ code ]              , type: unique                                                        }
+    i_active:                          { fields: [ active ]                                                                                                    }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]       
+    

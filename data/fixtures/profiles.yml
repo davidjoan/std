@@ -1,0 +1,20 @@
+Profile:
+  Profile_1:
+    Actions: [Action_home, Action_action_list, Action_action_new, Action_action_edit, Action_action_delete, Action_log_login, Action_log_logout, Action_User1, Action_User2, Action_User3,Action_User4, Action_Profile1,Action_Profile2,Action_Profile3,Action_Profile4]
+    name: Administrator
+    description: 'This profile has all the permissions in the system.'
+  Profile_2:
+    name: Aprobacion
+    description: 'This profile has all the permissions in the system.'
+  Profile_3:
+    name: Ingreso
+    description: 'This profile has all the permissions in the system.'
+  Profile_4:
+    name: Digitalización
+    description: 'This profile has all the permissions in the system.'
+  Profile_6:
+    name: Habilitación
+    description: 'This profile has all the permissions in the system.'        
+  Profile_7:
+    name: Impresión
+    description: 'This profile has all the permissions in the system.'

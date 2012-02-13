@@ -1,0 +1,19 @@
+Document:
+  Document_1:
+    User: User_1
+    Area: Area_1
+    DocumentClass: DocumentClass_3
+    code: 00001000    
+    qty: 1
+    active: '1'
+    Representative: Representative_1
+    description: 'Some text here'   
+    observations: 'Another text here'
+    main:         'Documento Extremadamente importante'
+    document_date:     null
+    registration_type: '3'
+    Record: Record_1
+    issue: null
+    type: null
+    reception_method: null
+    reception_date: null    

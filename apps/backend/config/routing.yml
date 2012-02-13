@@ -1,0 +1,315 @@
+record_show:
+  url:             /mostrar/expediente/:slug
+  param:           { module: Record, action: show }
+  requirements:    { slug: \w+ }
+  
+record_list:
+  url:             /listar/expediente/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Record, action: list, filter_by: code, filter: 0, order_by: code, order: a, max: 10, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[\*\w]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+record_new:
+  url:             /nuevo/expediente
+  param:           { module: Record, action: edit }
+  
+record_edit:
+  url:             /editar/expediente/:slug
+  param:           { module: Record, action: edit }
+  requirements:    { slug: \w+ }
+
+record_delete:
+  url:             /eliminar/expediente/:slug
+  param:           { module: Record, action: delete }
+  requirements:    { slug: '[\w,]+' }
+  
+
+area_show:
+  url:             /mostrar/area/:slug
+  param:           { module: Area, action: show }
+  requirements:    { slug: \w+ }
+  
+area_list:
+  url:             /listar/area/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Area, action: list, filter_by: name, filter: 0, order_by: rank, order: a, max: 10, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[\*\w]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+area_new:
+  url:             /nueva/area
+  param:           { module: Area, action: edit }
+  
+area_edit:
+  url:             /editar/area/:slug
+  param:           { module: Area, action: edit }
+  requirements:    { slug: \w+ }
+
+area_delete:
+  url:             /eliminar/area/:slug
+  param:           { module: Area, action: delete }
+  requirements:    { slug: '[\w,]+' }
+  
+area_sort:
+  url:             /ordenar/area/*
+  param:           { module: Area, action: sort }   
+
+
+
+
+document_class_show:
+  url:             /mostrar/tipo_documento/:slug
+  param:           { module: DocumentClass, action: show }
+  requirements:    { slug: \w+ }
+  
+document_class_list:
+  url:             /listar/tipo_documento/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: DocumentClass, action: list, filter_by: name, filter: 0, order_by: name, order: a, max: 10, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[\*\w]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+document_class_new:
+  url:             /nuevo/tipo_documento
+  param:           { module: DocumentClass, action: edit }
+  
+document_class_edit:
+  url:             /editar/tipo_documento/:slug
+  param:           { module: DocumentClass, action: edit }
+  requirements:    { slug: \w+ }
+
+document_class_delete:
+  url:             /eliminar/tipo_documento/:slug
+  param:           { module: DocumentClass, action: delete }
+  requirements:    { slug: '[\w,]+' }
+
+representative_show:
+  url:             /mostrar/remitente/:slug
+  param:           { module: Representative, action: show }
+  requirements:    { slug: \w+ }
+  
+representative_list:
+  url:             /listar/remitente/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Representative, action: list, filter_by: firstname, filter: 0, order_by: dni, order: a, max: 10, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[\*\w]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+representative_new:
+  url:             /nuevo/remitente
+  param:           { module: Representative, action: edit }
+  
+representative_edit:
+  url:             /editar/remitente/:slug
+  param:           { module: Representative, action: edit }
+  requirements:    { slug: \w+ }
+
+representative_delete:
+  url:             /eliminar/remitente/:slug
+  param:           { module: Representative, action: delete }
+  requirements:    { slug: '[\w,]+' }
+
+#Document
+
+document_show:
+  url:             /mostrar/documento/:slug
+  param:           { module: Document, action: show }
+  requirements:    { slug: \w+ }
+  
+document_list:
+  url:             /listar/documentos/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Document, action: list, filter_by: slug, filter: 0, order_by: code, order: a, max: 10, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[\*\w]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+document_new:
+  url:             /nuevo/documento
+  param:           { module: Document, action: edit }
+  
+document_edit:
+  url:             /editar/documento/:slug
+  param:           { module: Document, action: edit }
+  requirements:    { slug: \w+ }
+
+document_delete:
+  url:             /eliminar/documento/:slug
+  param:           { module: Document, action: delete }
+  requirements:    { slug: '[\w,]+' }
+
+
+
+  
+profile_show:
+  url:             /mostrar/perfil/:slug
+  param:           { module: Profile, action: show }
+  requirements:    { slug: \w+ }
+profile_list:
+  url:             /listar/perfiles/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Profile, action: list, filter_by: slug, filter: 0, order_by: name, order: a, max: 10, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[\*\w]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+profile_new:
+  url:             /profile/new
+  param:           { module: Profile, action: edit }
+  
+profile_edit:
+  url:             /editar/perfil/:slug
+  param:           { module: Profile, action: edit }
+  requirements:    { slug: \w+ }
+
+profile_delete:
+  url:             /eliminar/perfil/:slug
+  param:           { module: Profile, action: delete }
+  requirements:    { slug: '[\w,]+' }
+  
+  
+action_show:
+  url:             /mostrar/accion/:slug
+  param:           { module: Action, action: show }
+  requirements:    { slug: \w+ }  
+action_list:
+  url:             /listar/acciones/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Action, action: list, filter_by: name, filter: 0, order_by: created_at, order: a, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+action_new:
+  url:             /nueva/accion
+  param:           { module: Action, action: edit }
+
+action_edit:
+  url:             /editar/accion/:slug
+  param:           { module: Action, action: edit}
+  requirements:    { slug: \w+ }
+
+action_delete:
+  url:             /eliminar/accion/:slug
+  param:           { module: Action, action: delete }
+  requirements:    { slug: '[\w,]+' }
+
+#######################
+########## news #######
+#######################
+
+#file
+file_show:
+  url:             /mostrar/ficha/:slug
+  param:           { module: File, action: show }
+  requirements:    { slug: \w+ }
+
+file_list:
+  url:             /lista/fichas/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: File, action: list, filter_by: id, filter: 0, order_by: id, order: a, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+file_new:
+  url:             /nueva/ficha
+  param:           { module: File, action: edit }
+
+file_edit:
+  url:             /editar/ficha/:slug
+  param:           { module: File, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+file_delete:
+  url:             /eliminar/ficha/:slug
+  param:           { module: File, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+
+############################
+########## User ############
+############################
+
+#Document
+user_show:
+  url:             /mostrar/usuario/:slug
+  param:           { module: User, action: show }
+  requirements:    { slug: \w+ }
+
+user_list:
+  url:             /lista/usuarios/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: User, action: list, filter_by: id, filter: 0, order_by: id, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+user_new:
+  url:             /nuevo/usuario
+  param:           { module: User, action: edit }
+
+user_edit:
+  url:             /editar/usuario/:slug
+  param:           { module: User, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+user_delete:
+  url:             /eliminar/usuario/:slug
+  param:           { module: User, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+###########################
+######### Log #############
+###########################
+
+#Log
+log_login:
+  url:             /
+  param:           { module: Log, action: login }
+  
+log_logout:
+  url:             /logout
+  param:           { module: Log, action: logout }
+
+
+
+
+
+###########################
+######### General #########
+###########################
+
+#default
+default_disabled:
+  url:             /default/disabled
+  param:           { module: default, action: disabled }
+
+default_error404:
+  url:             /default/error404
+  param:           { module: default, action: error404 }
+
+default_login:
+  url:             /default/login
+  param:           { module: default, action: login }
+
+default_secure:
+  url:             /default/secure
+  param:           { module: default, action: secure }
+
+
+
+#Error
+error_delete_error:
+  url:             /error/delete_error
+  param:           { module: Error, action: deleteError }
+
+
+#Generic
+generic_get_attribute_value:
+  url:             /generic/get_attribute_value
+  param:           { module: Generic, action: getAttributeValue }
+
+generic_add_dynamic_form:
+  url:             /generic/add_dynamic_form
+  param:           { module: Generic, action: addDynamicForm }
+
+generic_remove_dynamic_form:
+  url:             /generic/remove_dynamic_form
+  param:           { module: Generic, action: removeDynamicForm }
+
+
+#Home
+home:
+  url:             /inicio
+  param:           { module: Home, action: show }
+  
+##############################
+######### Default ############
+##############################
+
+homepage:
+  url:             /
+  param:           { module: Log, action: login }
+
+default:
+  url:             /:module/:action/*
+
