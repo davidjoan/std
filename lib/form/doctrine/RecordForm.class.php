@@ -10,7 +10,79 @@
  */
 class RecordForm extends BaseRecordForm
 {
+  protected
+    $documentDynamicFormManager = null;
+    
+  public function initialize()
+  {
+    $this->labels = array
+                    (
+                      'from_area_id' => 'Area Origen',
+                      'to_area_id'   => 'Area Destino',
+                      'user_id'      => 'Usuario Creador',
+                      'code'         => 'Codigo',
+                      'subject'      => 'Asunto',
+                      'time_limit'   => 'Tiempo limite',
+                      'description'  => 'Observaciones',
+                      'status'       => 'Estado'
+                    ); 
+  }    
+  
   public function configure()
   {
+    $area_id = sfContext::getInstance()->getUser()->getAreaId();
+    $this->object->loadNextCode();
+    $this->object->setFromArea(Doctrine::getTable('Area')->findOneById($area_id));
+    $this->object->setUser(Doctrine::getTable('User')->findOneById(sfContext::getInstance()->getUser()->getUserId()));
+    $this->object->setStatus(1);
+    $this->setWidgets(array
+    (
+      'id'                => new sfWidgetFormInputHidden(),
+      'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
+      'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
+      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+      'to_area_id'        => new sfWidgetFormDoctrineChoice
+                              (
+                                array
+                                (
+                                  'model' => 'Area', 
+                                  'add_empty' => '--- Seleccionar ---',
+                                  'query'     => Doctrine::getTable('Record')->getOtherAreas($area_id),
+                                  'order_by' => array('Name', 'ASC')
+                                )
+                              ),   
+      'subject'               => new sfWidgetFormInput(array(), array('size' => '50')),
+      'time_limit'             => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
+      'status'                => new sfWidgetFormValue(array('value' => $this->object->getStatusStr())),
+      'description'       => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
+            ));
+        
+
+      
+      $this->types = array
+      (
+        'id'           => '=',
+        'from_area_id' => '-',
+        'to_area_id'   => 'combo',
+        'user_id'      => '-',
+        'code'         => '-',
+        'subject'      => 'text',
+        'time_limit'   => 'fixed_number',
+        'description'  => 'text',
+        'status'       => '-',
+        'active'       => '-',
+        'slug'         => '-',
+        'created_at'   => '-',
+        'updated_at'   => '-',
+      );
+      
+      $this->validatorSchema['time_limit']->setOption('required', true); 
+      $this->addDocumentsForm();
   }
+  
+  public function addDocumentsForm()
+  {
+    $this->documentDynamicFormManager = new sfDynamicFormEmbedderManager('document', $this->object->getDocuments()->getRelation(), 'Documentos', $this, null, new sfCallable(array($this->object, 'getDocuments')));
+  }
+  
 }

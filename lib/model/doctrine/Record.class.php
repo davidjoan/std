@@ -12,5 +12,21 @@
  */
 class Record extends BaseRecord
 {
+  public function getStatusStr()
+  {
+    $actives = $this->getTable()->getStatuss();
+    return $actives[$this->getStatus()];
+  }
+  
+  public function getAreaName()
+  {
+      return $this->getFromArea()->getName();
+  }
+  
 
+  
+  public function getFormattedDatetime($format = 'D')
+  {
+    return $this->getTable()->getDateTimeFormatter()->format($this->getCreatedAt(), $format);
+  }
 }

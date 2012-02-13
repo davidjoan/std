@@ -28,6 +28,12 @@ class Area extends BaseArea
     parent::save($conn);
   }
   
+  public function getRepresentativeName()
+  {
+      return $this->getRepresentative();
+  }
+  
+  
   public function setNewRank()
   {
   	$rank = $this->getTable()->getNewRank();

@@ -147,6 +147,7 @@ Document:
     document_date:                     { type: timestamp                                                                                                       }
     reception_date:                    { type: timestamp                                                                                                       }
     registration_type:                 { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
+    path:                              { type: string   , length: 255                   , notnull: true                                                        }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
   relations:
     Record:                            { class: Record           , local: record_id         , foreign: id      , type: one  , alias: Record         , onDelete: CASCADE, onUpdate: CASCADE }

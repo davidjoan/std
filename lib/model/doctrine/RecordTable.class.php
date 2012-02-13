@@ -16,4 +16,60 @@ class RecordTable extends DoctrineTable
     {
         return Doctrine_Core::getTable('Record');
     }
+    
+  const
+    STATUS_PENDING     = 1,
+    STATUS_IN_PROCCESS = 2,
+    STATUS_DERIVED     = 3,
+    STATUS_RETURNED    = 4,
+    STATUS_COMPLETED   = 4;
+  
+  protected static
+    $status                = array
+                             (
+                               self::STATUS_PENDING     => 'Pendiente',
+                               self::STATUS_IN_PROCCESS => 'En Proceso',
+                               self::STATUS_DERIVED     => 'Derivado',
+                               self::STATUS_RETURNED    => 'Devuelto',
+                               self::STATUS_COMPLETED   => 'Completado',
+                             );
+                             
+  public function getStatuss()
+  {
+    return self::$status;
+  }
+  
+  public function findNextCode()
+  {
+    $q = $this->createAliasQuery();
+    
+    $qty = $q->count();
+    $code   = $qty+1;
+    
+    return str_pad($code, 8, '0', STR_PAD_LEFT);
+  }
+  
+  public function getOtherAreas($area_id)
+  {
+  	 $q = Doctrine_Query::create()
+              ->select('*')
+              ->from('Area a');
+             
+         if($area_id <> null)
+         {
+           $q->where('a.id <> ?', $area_id);
+         }
+             
+  	 return $q;
+  } 
+  
+   public function updateQueryForList(DoctrineQuery $q)
+  {
+    $q->innerJoin('r.FromArea fa')
+      ->leftJoin('r.ToArea ta')
+      ->leftJoin('r.User u');
+    
+    return $q;
+  }
+
 }

@@ -26,6 +26,16 @@ class Profile extends BaseProfile
     return false;
   }
   
+  public function getActionName()
+  {
+      $return = '';
+      foreach ($this->getActions() as $action)
+      {
+          $return .=sprintf('%s<br/>',$action->getName());
+      }
+      return $return;
+  }  
+  
   public function __toString()
   {
     return $this->getName();

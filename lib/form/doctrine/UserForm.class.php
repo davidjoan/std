@@ -15,6 +15,7 @@ class UserForm extends BaseUserForm
     $this->labels = array
                     (
                       'profile_id'       => 'Perfil',
+                      'area_id'          => 'Area',
                       'username'         => 'Login',
                       'password'         => 'Password',
                       'confirm_password' => 'Confirmar password',
@@ -42,6 +43,15 @@ class UserForm extends BaseUserForm
                                   'order_by' => array('Name', 'ASC')
                                 )
                               ),
+      'area_id'          => new sfWidgetFormDoctrineChoice
+                              (
+                                array
+                                (
+                                  'model' => 'Area', 
+                                  'add_empty' => '--- Select ---', 
+                                  'order_by' => array('Name', 'ASC')
+                                )
+                              ),            
       'username'         => new sfWidgetFormInput(array(), array('size' => '20')),
       'password'         => new sfWidgetFormInputPassword(array(), array('size' => '20')),
       'confirm_password' => new sfWidgetFormInputPassword(array(), array('size' => '20')),
@@ -56,7 +66,8 @@ class UserForm extends BaseUserForm
     $this->types = array
     (
       'id'                  => '=',
-      'profile_id'          => '=',
+      'profile_id'          => 'combo',
+      'area_id'             => 'combo',
       'username'            => 'user',
       'password'            => 'password',
       'confirm_password'    => 'password',

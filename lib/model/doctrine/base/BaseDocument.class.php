@@ -22,6 +22,7 @@
  * @property timestamp $document_date
  * @property timestamp $reception_date
  * @property string $registration_type
+ * @property string $path
  * @property string $active
  * @property Record $Record
  * @property User $User
@@ -46,6 +47,7 @@
  * @method timestamp      getDocumentDate()      Returns the current record's "document_date" value
  * @method timestamp      getReceptionDate()     Returns the current record's "reception_date" value
  * @method string         getRegistrationType()  Returns the current record's "registration_type" value
+ * @method string         getPath()              Returns the current record's "path" value
  * @method string         getActive()            Returns the current record's "active" value
  * @method Record         getRecord()            Returns the current record's "Record" value
  * @method User           getUser()              Returns the current record's "User" value
@@ -69,6 +71,7 @@
  * @method Document       setDocumentDate()      Sets the current record's "document_date" value
  * @method Document       setReceptionDate()     Sets the current record's "reception_date" value
  * @method Document       setRegistrationType()  Sets the current record's "registration_type" value
+ * @method Document       setPath()              Sets the current record's "path" value
  * @method Document       setActive()            Sets the current record's "active" value
  * @method Document       setRecord()            Sets the current record's "Record" value
  * @method Document       setUser()              Sets the current record's "User" value
@@ -173,6 +176,11 @@ abstract class BaseDocument extends DoctrineRecord
              'fixed' => 1,
              'notnull' => true,
              'default' => 0,
+             ));
+        $this->hasColumn('path', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             'notnull' => true,
              ));
         $this->hasColumn('active', 'string', 1, array(
              'type' => 'string',

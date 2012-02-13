@@ -58,5 +58,16 @@ class DocumentTable extends DoctrineTable
   {
     return self::$registration_type;  
   }
+  
+  public function getPathDir()
+  {
+    return sfConfig::get('app_document_path_dir');
+  }
+  
+  public function getPathPath()
+  {
+    return sfConfig::get('app_document_path_path');
+  }
+  
     
 }

@@ -12,10 +12,28 @@
  */
 class Document extends BaseDocument
 {
+    
+  public function generatePathFilename($file)
+  {
+    return Stringkit::fixFilename($file->getOriginalName()).'_'.rand(11111, 99999).$file->getOriginalExtension();
+  }
+
+  
   public function getDocumentClassName()
   {
       return $this->getDocumentClass()->getName();
   }
+  
+  public function getRepresentativeName()
+  {
+      return $this->getRepresentative();
+  }
+  
+  public function getRegistrationTypeName()
+  {
+    $actives = $this->getTable()->getRegistrationType();
+    return $actives[$this->getRegistrationType()];
+  }  
   
   /*public function getDocumentDate()
   {

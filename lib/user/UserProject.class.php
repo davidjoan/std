@@ -32,10 +32,11 @@ class UserProject extends sfUserExt
    */
   public function login(User $user)
   {
-    $this->setAttribute('user_id' , $user->getId()      , ActionsProject::USER_NAMESPACE);
-    $this->setAttribute('username', $user->getUsername(), ActionsProject::USER_NAMESPACE);
-    $this->setAttribute('email'   , $user->getEmail()   , ActionsProject::USER_NAMESPACE);
-    $this->setAttribute('slug'    , $user->getSlug()    , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('user_id' , $user->getId()            , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('area_id' , $user->getArea()->getId() , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('username', $user->getUsername()      , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('email'   , $user->getEmail()         , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('slug'    , $user->getSlug()          , ActionsProject::USER_NAMESPACE);
     $this->setAuthenticated(true);
   }
   /**
@@ -52,6 +53,11 @@ class UserProject extends sfUserExt
   {
     return $this->getAttribute('user_id' , $default, ActionsProject::USER_NAMESPACE);
   }
+  public function getAreaId($default = null)
+  {
+    return $this->getAttribute('area_id' , $default, ActionsProject::USER_NAMESPACE);
+  }
+  
   public function getUsername($default = null)
   {
     return $this->getAttribute('username', $default, ActionsProject::USER_NAMESPACE);

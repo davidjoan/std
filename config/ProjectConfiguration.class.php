@@ -20,6 +20,8 @@ class ProjectConfiguration extends sfProjectConfigurationExt
   {
     parent::setConfigVariables();
     
+    $this->setConfigDirPathVariable('document_path'        , sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'document_path'        );
+
     sfConfig::set('site_name', 'std');
     
  

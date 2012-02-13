@@ -19,5 +19,7 @@ abstract class ActionsProject extends sfActionsExt
     DOCUMENT_CLASS_NAMESPACE           = 'DocumentClass',
     PROFILE_NAMESPACE                  = 'Profile',
     AREA_NAMESPACE                     = 'Area',
+    RECORD_NAMESPACE                   = 'Record',
     DOCUMENT_NAMESPACE                 = 'Document';
 }
+
