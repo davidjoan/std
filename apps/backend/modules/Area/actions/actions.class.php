@@ -14,7 +14,7 @@ class AreaActions extends ActionsCrud
   {
     return array
     (
-      't'  => array('representative_name' => 'representative_name'),
+      't'  => array('name' => 'representative_name'),
     );
   }	
   protected function complementList(sfWebRequest $request, DoctrineQuery $q)

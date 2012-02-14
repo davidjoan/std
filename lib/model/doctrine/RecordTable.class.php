@@ -22,7 +22,7 @@ class RecordTable extends DoctrineTable
     STATUS_IN_PROCCESS = 2,
     STATUS_DERIVED     = 3,
     STATUS_RETURNED    = 4,
-    STATUS_COMPLETED   = 4;
+    STATUS_COMPLETED   = 5;
   
   protected static
     $status                = array
@@ -65,7 +65,8 @@ class RecordTable extends DoctrineTable
   
    public function updateQueryForList(DoctrineQuery $q)
   {
-    $q->innerJoin('r.FromArea fa')
+    $q->addSelect("r.*, CONCAT(u.first_name,' ', u.last_name) user_name, fa.name from_area_name, ta.name to_area_name")
+      ->leftJoin('r.FromArea fa')
       ->leftJoin('r.ToArea ta')
       ->leftJoin('r.User u');
     

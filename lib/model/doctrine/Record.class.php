@@ -18,15 +18,57 @@ class Record extends BaseRecord
     return $actives[$this->getStatus()];
   }
   
+  public function getTimeLimitStr()
+  {
+      return sprintf('%s dias',$this->getTimeLimit());
+  }
+  
   public function getAreaName()
   {
       return $this->getFromArea()->getName();
   }
   
-
+  
+  public function getUserName()
+  {
+  	return sprintf('%s, %s', $this->getUser()->getLastName(), $this->getUser()->getFirstName());
+  }  
   
   public function getFormattedDatetime($format = 'D')
   {
     return $this->getTable()->getDateTimeFormatter()->format($this->getCreatedAt(), $format);
   }
+  
+  public function doLogCreationAccordingStatusChanges()
+  {
+    if ($this->isColumnModified('status'))
+    {
+      $recordLog = new RecordLog();
+      
+      //$recordLog->setRecordId($this->getId());
+      
+      $recordLog->setCode($this->getCode());
+      $recordLog->setActive($this->getActive());
+      $recordLog->setDescription($this->getDescription());
+      $recordLog->setFromAreaId($this->getFromAreaId());
+      $recordLog->setToAreaId($this->getToAreaId());
+      $recordLog->setSubject($this->getSubject());
+      $recordLog->setUserId($this->getUserId());
+      $recordLog->setStatus($this->getStatus());
+      $recordLog->setTimeLimit($this->getTimeLimit());
+          
+      $this->RecordLogs[] = $recordLog;
+    }
+  }  
+  
+  public function save(Doctrine_Connection $conn = null)
+  {
+    if(!$this->isNew())
+    {
+    	$this->doLogCreationAccordingStatusChanges();
+    }
+    
+    parent::save($conn);
+  }
+  
 }

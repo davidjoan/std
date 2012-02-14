@@ -13,7 +13,7 @@ record_new:
   param:           { module: Record, action: edit }
   
 record_edit:
-  url:             /editar/expediente/:slug
+  url:             /editar/expediente/:slug/*
   param:           { module: Record, action: edit }
   requirements:    { slug: \w+ }
 

@@ -29,6 +29,11 @@ class User extends BaseUser
   {
   	return sprintf('%s, %s', $this->getLastName(), $this->getFirstName());
   }
+  
+  public function getUserName()
+  {
+  	return sprintf('%s, %s', $this->getLastName(), $this->getFirstName());
+  }  
 
   public function getProfileName()
   {

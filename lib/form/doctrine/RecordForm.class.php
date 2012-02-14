@@ -24,6 +24,7 @@ class RecordForm extends BaseRecordForm
                       'subject'      => 'Asunto',
                       'time_limit'   => 'Tiempo limite',
                       'description'  => 'Observaciones',
+                      'status_show'  => 'Estado',
                       'status'       => 'Estado'
                     ); 
   }    
@@ -34,7 +35,12 @@ class RecordForm extends BaseRecordForm
     $this->object->loadNextCode();
     $this->object->setFromArea(Doctrine::getTable('Area')->findOneById($area_id));
     $this->object->setUser(Doctrine::getTable('User')->findOneById(sfContext::getInstance()->getUser()->getUserId()));
-    $this->object->setStatus(1);
+    
+    if($this->object->isNew())
+    {
+      $this->object->setStatus(1);    
+    }
+    
     $this->setWidgets(array
     (
       'id'                => new sfWidgetFormInputHidden(),
@@ -53,7 +59,8 @@ class RecordForm extends BaseRecordForm
                               ),   
       'subject'               => new sfWidgetFormInput(array(), array('size' => '50')),
       'time_limit'             => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
-      'status'                => new sfWidgetFormValue(array('value' => $this->object->getStatusStr())),
+      'status_show'       => new sfWidgetFormValue(array('value' => $this->object->getStatusStr())),
+      'status'             => new sfWidgetFormInputHidden(),
       'description'       => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
             ));
         
@@ -69,7 +76,8 @@ class RecordForm extends BaseRecordForm
         'subject'      => 'text',
         'time_limit'   => 'fixed_number',
         'description'  => 'text',
-        'status'       => '-',
+        'status'       => 'code',
+        'status_show'  => '-',  
         'active'       => '-',
         'slug'         => '-',
         'created_at'   => '-',
