@@ -20,13 +20,13 @@ $params = array
 
 
 <?php slot('buttons') ?>
-<td><?php echo button_to_get_url('Recibir', '@record_new?slug=slug&status='.RecordTable::STATUS_RECEIVED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+<td><?php echo button_to_get_url('Recibir', '@record_change_status?slug=slug&status='.RecordTable::STATUS_RECEIVED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
-<td><?php echo button_to_get_url('Derivar', '@record_new?slug=slug&status='.RecordTable::STATUS_DERIVED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+<td><?php echo button_to_get_url('Derivar', '@record_change_status?slug=slug&status='.RecordTable::STATUS_DERIVED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
-<td><?php echo button_to_get_url('Devolver', '@record_new?slug=slug&status='.RecordTable::STATUS_RETURNED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+<td><?php echo button_to_get_url('Devolver', '@record_change_status?slug=slug&status='.RecordTable::STATUS_RETURNED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
-<td><?php echo button_to_get_url('Completar', '@record_new?slug=slug&status='.RecordTable::STATUS_COMPLETED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+<td><?php echo button_to_get_url('Completar', '@record_change_status?slug=slug&status='.RecordTable::STATUS_COMPLETED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
 <?php end_slot() ?>
 
@@ -66,12 +66,12 @@ $params = array
                                 (
                                   array('2' , ''                  , ''                , ''                                ),
                                   array('7', 'code'              , 'Codigo'          , 'getCode'                         ),
-                                  array('14', 'user_name'         , 'Usuario Creador' , 'getUserName'                     ),
+                                  //array('12', 'user_name'         , 'Usuario Creador' , 'getUserName'                     ),
                                   array('14', 'from_area_name'    , 'Area Origen'     , 'getFromAreaName'                 ),
                                   array('14', 'to_area_name'      , 'Area Destino'    , 'getToAreaName'                   ),
                                   array('20', 'subject'           , 'Asunto'          , 'getSubject'                      ),
                                   array('8', 'time_limit'        , 'Limite'          , 'getTimeLimitStr'                 ),
-                                  array('8', 'status'            , 'Estado'          , 'getStatusColorStr'                    ),
+                                  array('12', 'status'            , 'Estado'          , 'getStatusColorStr'                    ),
                                   array('15', 'created_at'    , 'Fecha Creaci&oacute;n' , 'getFormattedDatetime'    ),
                                                                     
 //array('6' , 'disable_image'     , 'Activo'          , 'getDisableImage', 'center', false),

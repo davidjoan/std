@@ -38,9 +38,15 @@ record_list:
 record_new:
   url:             /nuevo/expediente
   param:           { module: Record, action: edit }
+
+record_change_status:
+  url:             /expediente/:slug/estado/:status
+  param:           { module: Record, action: edit, status: 1 }
+  requirements:    { status: \d+, slug: \w+ }
+  
   
 record_edit:
-  url:             /editar/expediente/:slug/*
+  url:             /editar/expediente/:slug
   param:           { module: Record, action: edit }
   requirements:    { slug: \w+ }
 

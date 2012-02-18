@@ -113,12 +113,12 @@ abstract class BaseDocument extends DoctrineRecord
         $this->hasColumn('representative_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('document_class_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('code', 'string', 50, array(
              'type' => 'string',
@@ -128,7 +128,7 @@ abstract class BaseDocument extends DoctrineRecord
         $this->hasColumn('issue', 'string', 200, array(
              'type' => 'string',
              'length' => 200,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('qty', 'integer', 10, array(
              'type' => 'integer',
@@ -139,13 +139,13 @@ abstract class BaseDocument extends DoctrineRecord
              'type' => 'string',
              'length' => 1,
              'fixed' => 1,
-             'notnull' => true,
+             'notnull' => false,
              'default' => 0,
              ));
         $this->hasColumn('description', 'string', 1000, array(
              'type' => 'string',
              'length' => 1000,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('observations', 'string', 1000, array(
              'type' => 'string',
@@ -155,7 +155,7 @@ abstract class BaseDocument extends DoctrineRecord
         $this->hasColumn('main', 'string', 1000, array(
              'type' => 'string',
              'length' => 1000,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('reception_method', 'string', 1, array(
              'type' => 'string',

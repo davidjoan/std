@@ -14,6 +14,7 @@ class RecordActions extends ActionsCrud
   {
       //Deb::print_r($request->getParameterHolder()->getAll());
       $this->status = $request->getParameter('status');
+      $this->slug = $request->getParameter('slug');
       //Deb::print_r($this->status);
       if(!is_null($this->status))
       {

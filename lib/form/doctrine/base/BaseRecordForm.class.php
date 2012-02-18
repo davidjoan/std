@@ -16,8 +16,8 @@ abstract class BaseRecordForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'           => new sfWidgetFormInputHidden(),
-      'from_area_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FromArea'), 'add_empty' => false)),
-      'to_area_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ToArea'), 'add_empty' => false)),
+      'from_area_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FromArea'), 'add_empty' => true)),
+      'to_area_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ToArea'), 'add_empty' => true)),
       'user_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => false)),
       'code'         => new sfWidgetFormInputText(),
       'subject'      => new sfWidgetFormInputText(),
@@ -32,8 +32,8 @@ abstract class BaseRecordForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'from_area_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('FromArea'))),
-      'to_area_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ToArea'))),
+      'from_area_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('FromArea'), 'required' => false)),
+      'to_area_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ToArea'), 'required' => false)),
       'user_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('User'))),
       'code'         => new sfValidatorString(array('max_length' => 20)),
       'subject'      => new sfValidatorString(array('max_length' => 250)),

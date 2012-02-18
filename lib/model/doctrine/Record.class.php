@@ -101,7 +101,7 @@ class Record extends BaseRecord
 
                   break;
               case RecordTable::STATUS_RECEIVED:
-                  if(($status == RecordTable::STATUS_DERIVED || $status == RecordTable::STATUS_RETURNED) && $this->getToAreaId() ==  $area_id)
+                  if(($status == RecordTable::STATUS_DERIVED || $status == RecordTable::STATUS_RETURNED || $status == RecordTable::STATUS_COMPLETED) && $this->getToAreaId() ==  $area_id)
                   {
                       $validation = true;
                   }

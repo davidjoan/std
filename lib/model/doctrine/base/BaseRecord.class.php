@@ -71,12 +71,12 @@ abstract class BaseRecord extends DoctrineRecord
         $this->hasColumn('from_area_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('to_area_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('user_id', 'integer', 20, array(
              'type' => 'integer',

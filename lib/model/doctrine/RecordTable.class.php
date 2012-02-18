@@ -29,7 +29,7 @@ class RecordTable extends DoctrineTable
     $status                = array
                              (
                                self::STATUS_PENDING     => 'Pendiente',
-                               self::STATUS_RECEIVED    => 'Recivido',
+                               self::STATUS_RECEIVED    => 'Recibido',
                                self::STATUS_DERIVED     => 'Derivado',
                                self::STATUS_RETURNED    => 'Devuelto',
                                self::STATUS_COMPLETED   => 'Completado',
@@ -88,6 +88,8 @@ class RecordTable extends DoctrineTable
     {
       $q->addWhere('r.status = ?', $params['status']);    
     }
+    $area_id = sfContext::getInstance()->getUser()->getAreaId();
+    $q->andWhere('r.from_area_id = ?', $area_id)->orWhere('r.to_area_id = ?', $area_id);
     
     
     

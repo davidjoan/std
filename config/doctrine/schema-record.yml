@@ -72,8 +72,8 @@ Record:
     Timestampable:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
-    from_area_id:                      { type: integer  , length: 20                    , notnull: true                                                        }
-    to_area_id:                        { type: integer  , length: 20                    , notnull: true                                                        }
+    from_area_id:                      { type: integer  , length: 20                    , notnull: false                                                        }
+    to_area_id:                        { type: integer  , length: 20                    , notnull: false                                                        }
     user_id:                           { type: integer  , length: 20                    , notnull: true                                                        }
     code:                              { type: string   , length: 20                    , notnull: true                                                        }
     subject:                           { type: string   , length: 250                   , notnull: true                                                        }
@@ -134,15 +134,15 @@ Document:
     record_id:                         { type: integer  , length: 20        , notnull: true                                                                    }
     user_id:                           { type: integer  , length: 20                    , notnull: true                                                        }    
     area_id:                           { type: integer  , length: 20                    , notnull: true                                                        }    
-    representative_id:                 { type: integer  , length: 20        , notnull: true                                                                    }
-    document_class_id:                 { type: integer  , length: 20        , notnull: true                                                                    }
+    representative_id:                 { type: integer  , length: 20        , notnull: false                                                                    }
+    document_class_id:                 { type: integer  , length: 20        , notnull: false                                                                    }
     code:                              { type: string   , length: 50                    , notnull: true                                                        }
-    issue:                             { type: string   , length: 200                   , notnull: true                                                        }
+    issue:                             { type: string   , length: 200                   , notnull: false                                                        }
     qty:                               { type: integer  , length: 10                                    , default: 0                                           }
-    type:                              { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
-    description:                       { type: string   , length: 1000                  , notnull: true                                                        }
+    type:                              { type: string   , length: 1  , fixed: true      , notnull: false , default: 0                                           }
+    description:                       { type: string   , length: 1000                  , notnull: false                                                        }
     observations:                      { type: string   , length: 1000                  , notnull: false                                                        }
-    main:                              { type: string   , length: 1000                  , notnull: true                                                        }
+    main:                              { type: string   , length: 1000                  , notnull: false                                                        }
     reception_method:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 'R'                                         }
     document_date:                     { type: timestamp                                                                                                       }
     reception_date:                    { type: timestamp                                                                                                       }
