@@ -118,11 +118,11 @@ class sfDoctrineQueryExt extends Doctrine_Query
   {
 	  if ($from)
 	  {
-	    $this->andWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') >= ?', $field), $from);
+	    $this->andWhere(sprintf('DATE_FORMAT(%s, \'%%d-%%m-%%Y\') >= ?', $field), $from);
 	  }
 	  if ($to)
 	  {
-	    $this->andWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') <= ?', $field), $to);
+	    $this->andWhere(sprintf('DATE_FORMAT(%s, \'%%d-%%m-%%Y\') <= ?', $field), $to);
 	  }
 
   	return $this;

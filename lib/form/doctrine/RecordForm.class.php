@@ -33,21 +33,28 @@ class RecordForm extends BaseRecordForm
   {
     $area_id = sfContext::getInstance()->getUser()->getAreaId();
     $this->object->loadNextCode();
-    $this->object->setFromArea(Doctrine::getTable('Area')->findOneById($area_id));
-    $this->object->setUser(Doctrine::getTable('User')->findOneById(sfContext::getInstance()->getUser()->getUserId()));
+    if($this->object->getStatus() != RecordTable::STATUS_RECEIVED)
+    {
+      $this->object->setFromArea(Doctrine::getTable('Area')->findOneById($area_id));
+      $this->object->setUser(Doctrine::getTable('User')->findOneById(sfContext::getInstance()->getUser()->getUserId()));  
+    }
     
     if($this->object->isNew())
     {
       $this->object->setStatus(1);    
     }
     
+    //Deb::print_r_pre($this->object->toArray());
+    
     $this->setWidgets(array
     (
       'id'                => new sfWidgetFormInputHidden(),
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
-      'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
       'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
-      'to_area_id'        => new sfWidgetFormDoctrineChoice
+      'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
+      'to_area_id'        => ($this->object->getStatus() == RecordTable::STATUS_RECEIVED)?
+                              new sfWidgetFormValue(array('value' => $this->object->getToArea()->getName())): 
+                              new sfWidgetFormDoctrineChoice
                               (
                                 array
                                 (
@@ -57,20 +64,20 @@ class RecordForm extends BaseRecordForm
                                   'order_by' => array('Name', 'ASC')
                                 )
                               ),   
-      'subject'               => new sfWidgetFormInput(array(), array('size' => '50')),
-      'time_limit'             => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
+      'to_area_id_show'   => new sfWidgetFormValue(array('value' => $this->object->getStatusStr())),
+      'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
+      'time_limit'        => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
       'status_show'       => new sfWidgetFormValue(array('value' => $this->object->getStatusStr())),
-      'status'             => new sfWidgetFormInputHidden(),
+      'status'            => new sfWidgetFormInputHidden(),
       'description'       => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
             ));
         
 
-      
       $this->types = array
       (
         'id'           => '=',
         'from_area_id' => '-',
-        'to_area_id'   => 'combo',
+        'to_area_id'   => ($this->object->getStatus() == RecordTable::STATUS_RECEIVED)?'-':'combo',
         'user_id'      => '-',
         'code'         => '-',
         'subject'      => 'text',
@@ -84,7 +91,7 @@ class RecordForm extends BaseRecordForm
         'updated_at'   => '-',
       );
       
-      $this->validatorSchema['time_limit']->setOption('required', true); 
+    //  $this->validatorSchema['time_limit']->setOption('required', true); 
       $this->addDocumentsForm();
   }
   

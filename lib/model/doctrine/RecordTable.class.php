@@ -19,26 +19,40 @@ class RecordTable extends DoctrineTable
     
   const
     STATUS_PENDING     = 1,
-    STATUS_IN_PROCCESS = 2,
+    STATUS_RECEIVED    = 2,
     STATUS_DERIVED     = 3,
     STATUS_RETURNED    = 4,
     STATUS_COMPLETED   = 5;
+  
   
   protected static
     $status                = array
                              (
                                self::STATUS_PENDING     => 'Pendiente',
-                               self::STATUS_IN_PROCCESS => 'En Proceso',
+                               self::STATUS_RECEIVED    => 'Recivido',
                                self::STATUS_DERIVED     => 'Derivado',
                                self::STATUS_RETURNED    => 'Devuelto',
                                self::STATUS_COMPLETED   => 'Completado',
                              );
-                             
+  
+  protected static
+    $color                = array(
+    self::STATUS_PENDING     => 'purple',
+    self::STATUS_RECEIVED    => 'orange',
+    self::STATUS_DERIVED     => 'skyblue',
+    self::STATUS_RETURNED    => 'red',
+    self::STATUS_COMPLETED   => 'green');  
+  
+  
   public function getStatuss()
   {
     return self::$status;
   }
   
+  public function getColors()
+  {
+    return self::$color;
+  }  
   public function findNextCode()
   {
     $q = $this->createAliasQuery();
@@ -63,12 +77,20 @@ class RecordTable extends DoctrineTable
   	 return $q;
   } 
   
-   public function updateQueryForList(DoctrineQuery $q)
+   public function updateQueryForList(DoctrineQuery $q, array $params)
   {
-    $q->addSelect("r.*, CONCAT(u.first_name,' ', u.last_name) user_name, fa.name from_area_name, ta.name to_area_name")
+       $q->addSelect("r.*, CONCAT(u.first_name,' ', u.last_name) user_name, fa.name from_area_name, ta.name to_area_name")
       ->leftJoin('r.FromArea fa')
       ->leftJoin('r.ToArea ta')
-      ->leftJoin('r.User u');
+      ->leftJoin('r.User u')
+      ->andIntervalWhere('r.created_at',$params['from'], $params['to']);
+    if($params['status'])
+    {
+      $q->addWhere('r.status = ?', $params['status']);    
+    }
+    
+    
+    
     
     return $q;
   }

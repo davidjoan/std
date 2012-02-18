@@ -38,7 +38,7 @@ abstract class BaseRecordForm extends BaseFormDoctrine
       'code'         => new sfValidatorString(array('max_length' => 20)),
       'subject'      => new sfValidatorString(array('max_length' => 250)),
       'time_limit'   => new sfValidatorInteger(array('required' => false)),
-      'description'  => new sfValidatorString(array('max_length' => 1000)),
+      'description'  => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
       'status'       => new sfValidatorString(array('max_length' => 1, 'required' => false)),
       'active'       => new sfValidatorString(array('max_length' => 1, 'required' => false)),
       'slug'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),

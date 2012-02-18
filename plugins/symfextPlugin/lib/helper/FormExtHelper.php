@@ -65,6 +65,12 @@ function input_date_tag($name, $value = null, $options = array(), $attributes = 
   return $input->render($name, $value, $attributes, $errors);
 }
 
+function input_date_jquery($name, $value = null, $options = array(), $attributes = array(), $errors = array())
+{
+  $input = new sfWidgetFormDateJQueryUI($options);
+  return $input->render($name, $value, $attributes, $errors);
+}
+
 /**
  * Returns a filtered input text tag.
  * 

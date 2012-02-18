@@ -14,10 +14,19 @@ class RecordActions extends ActionsCrud
   {
       //Deb::print_r($request->getParameterHolder()->getAll());
       $this->status = $request->getParameter('status');
-      if($this->status <> '')
+      //Deb::print_r($this->status);
+      if(!is_null($this->status))
+      {
+      if($this->object->validation($this->status, $this->getUser()->getAreaId()))
       {
         $this->object->setStatus($this->status);    
       }
+      else
+      {
+        $this->redirect($this->getEntranceRoute());          
+      }          
+      }
+      
       
   }
   
@@ -34,8 +43,11 @@ class RecordActions extends ActionsCrud
   protected function complementList(sfWebRequest $request, DoctrineQuery $q)
   {
     sfDynamicFormEmbedder::resetParams('document');
-    
-    Doctrine::getTable($this->modelClass)->updateQueryForList($q);
+    $datetime = new sfDateFormatExt();
+    $this->years  = $datetime->getYearsArray();
+    $this->months = $datetime->getMonthsArray('MM');
+    $this->days   = $datetime->getDaysArray();    
+    Doctrine::getTable($this->modelClass)->updateQueryForList($q, $request->getParameterHolder()->getAll());
   }
   
 

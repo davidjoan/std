@@ -2,33 +2,52 @@
 Expedientes
 <?php end_slot() ?>
 
+<?php
+$params = array
+    (
+    'from' => array('id' => 'from'),
+    'to' => array('id' => 'to'),
+    'status' => array('id' => 'status'),
+    'filter_by' => array('id' => 'filter_by'),
+    'filter' => array('id' => 'filter', 'filter' => true),
+    'order_by' => array('id' => 'order_by'),
+    'order' => array('id' => 'order'),
+    'max' => array('id' => 'max'),
+    'page' => array('id' => 'page'),
+);
+?>
+
+
+
 <?php slot('buttons') ?>
-  <td><?php echo button_to_get_url('Derivar', '@record_new?slug=slug&status=3', array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+<td><?php echo button_to_get_url('Recibir', '@record_new?slug=slug&status='.RecordTable::STATUS_RECEIVED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+
+<td><?php echo button_to_get_url('Derivar', '@record_new?slug=slug&status='.RecordTable::STATUS_DERIVED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+
+<td><?php echo button_to_get_url('Devolver', '@record_new?slug=slug&status='.RecordTable::STATUS_RETURNED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+
+<td><?php echo button_to_get_url('Completar', '@record_new?slug=slug&status='.RecordTable::STATUS_COMPLETED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+
 <?php end_slot() ?>
 
 <?php slot('filter_top') ?>
 <table class="search">
-  <tr>
-    <td>Fecha Inicio:</td>
-    <td><?php echo input_date_tag('from', $sf_params->get('from')) ?></td>
-    <td colspan="3">&nbsp;</td>
+  <tr><td>Fecha Inicio:</td><td><?php echo input_date_jquery('from', $sf_params->get('from') == '0' ? '' : $sf_params->get('from')) ?></td>
   </tr>
   <tr>
-    <td>Fecha Fin:</td><td><?php echo input_date_tag('to', $sf_params->get('to')) ?></td>
-    <td>&nbsp;</td>
-  </tr>  
+      <td>Fecha Fin:</td><td><?php echo input_date_jquery('to', $sf_params->get('to') == '0' ? '' : $sf_params->get('to')) ?></td></tr>
   <tr>
-      <td>Status:</td>
+      <td>Estado:</td>
       <td colspan="4"><?php echo select_tag('status', Doctrine::getTable('Record')->getStatuss(), $sf_params->get('status')) ?></td>
-  </tr>      
+</tr>
 </table>
 <?php end_slot() ?>
 
 <?php include_component('Crud', 'list', array
       (
         'pager'              => $pager,
-                                
-        'uri'                => '@record_list?filter_by=filter_by&filter=filter&order_by=order_by&order=order&max=max&page=page',
+        'params'             => $params,                    
+        'uri'                => '@record_list?from=from&to=to&status=status&filter_by=filter_by&filter=filter&order_by=order_by&order=order&max=max&page=page',
                                 
         'edit_field'         => 'code',
         'filter_fields'      => array
@@ -46,14 +65,16 @@ Expedientes
         'columns'            => array
                                 (
                                   array('2' , ''                  , ''                , ''                                ),
-                                  array('10', 'code'              , 'Codigo'          , 'getCode'                         ),
-                                  array('15', 'user_name'         , 'Usuario Creador' , 'getUserName'                     ),
-                                  array('15', 'from_area_name'    , 'Area Origen'     , 'getFromAreaName'                 ),
-                                  array('15', 'to_area_name'      , 'Area Destino'    , 'getToAreaName'                   ),
+                                  array('7', 'code'              , 'Codigo'          , 'getCode'                         ),
+                                  array('14', 'user_name'         , 'Usuario Creador' , 'getUserName'                     ),
+                                  array('14', 'from_area_name'    , 'Area Origen'     , 'getFromAreaName'                 ),
+                                  array('14', 'to_area_name'      , 'Area Destino'    , 'getToAreaName'                   ),
                                   array('20', 'subject'           , 'Asunto'          , 'getSubject'                      ),
-                                  array('10', 'time_limit'        , 'Limite'          , 'getTimeLimitStr'                 ),
-                                  array('15', 'status'            , 'Estado'          , 'getStatusStr'                    ),
-                                  //array('6' , 'disable_image'     , 'Activo'          , 'getDisableImage', 'center', false),
+                                  array('8', 'time_limit'        , 'Limite'          , 'getTimeLimitStr'                 ),
+                                  array('8', 'status'            , 'Estado'          , 'getStatusColorStr'                    ),
+                                  array('15', 'created_at'    , 'Fecha Creaci&oacute;n' , 'getFormattedDatetime'    ),
+                                                                    
+//array('6' , 'disable_image'     , 'Activo'          , 'getDisableImage', 'center', false),
                                   array('2' , ''                  , ''                , 'checkbox'                        ),
                                 )
       ))

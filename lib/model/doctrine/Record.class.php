@@ -17,6 +17,17 @@ class Record extends BaseRecord
     $actives = $this->getTable()->getStatuss();
     return $actives[$this->getStatus()];
   }
+  public function getStatusColorStr()
+  {
+    $actives = $this->getTable()->getStatuss();
+    $colors = $this->getTable()->getColors();
+    $color = $colors[$this->getStatus()];
+    $status = $actives[$this->getStatus()];
+    $area_id = sfContext::getInstance()->getUser()->getAreaId();
+    $direction = ($area_id == $this->getFromAreaId())?image_tag('backend/arrow_right.gif'):image_tag('backend/arrow_left.gif');
+    return sprintf("<span style='font-weight: bold; color: %s'>%s</span>",$color, $status.' '.$direction);
+  }
+  
   
   public function getTimeLimitStr()
   {
@@ -67,8 +78,53 @@ class Record extends BaseRecord
     {
     	$this->doLogCreationAccordingStatusChanges();
     }
-    
+        
     parent::save($conn);
+  }
+  
+  public function validation($status, $area_id)
+  {
+      $validation = false;
+      
+          switch ($this->status) {
+              case RecordTable::STATUS_PENDING:
+                  if($status == RecordTable::STATUS_DERIVED )
+                  {
+                      $validation = true;
+                  }
+                  break;
+              case RecordTable::STATUS_DERIVED:
+                  if($status == RecordTable::STATUS_RECEIVED && $this->getToAreaId() ==  $area_id )
+                  {
+                      $validation = true;
+                  }
+
+                  break;
+              case RecordTable::STATUS_RECEIVED:
+                  if(($status == RecordTable::STATUS_DERIVED || $status == RecordTable::STATUS_RETURNED) && $this->getToAreaId() ==  $area_id)
+                  {
+                      $validation = true;
+                  }
+
+                  break;
+              case RecordTable::STATUS_RETURNED:
+                  if($status == RecordTable::STATUS_COMPLETED && $this->getFromAreaId() ==  $area_id)
+                  {
+                      $validation = true;
+                  }
+
+                  break;
+              case RecordTable::STATUS_COMPLETED:
+                  if($status == RecordTable::STATUS_RECEIVED && $this->getToAreaId() ==  $area_id)
+                  {
+                      $validation = true;
+                  }                      
+               
+                  break;
+              default:
+                  break;
+          }      
+          return $validation;
   }
   
 }

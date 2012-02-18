@@ -78,7 +78,7 @@ Record:
     code:                              { type: string   , length: 20                    , notnull: true                                                        }
     subject:                           { type: string   , length: 250                   , notnull: true                                                        }
     time_limit:                        { type: integer  , length: 20                                                                                           }
-    description:                       { type: string   , length: 1000                  , notnull: true                                                        }
+    description:                       { type: string   , length: 1000                  , notnull: false                                                        }
     status:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
   relations:
@@ -141,7 +141,7 @@ Document:
     qty:                               { type: integer  , length: 10                                    , default: 0                                           }
     type:                              { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
     description:                       { type: string   , length: 1000                  , notnull: true                                                        }
-    observations:                      { type: string   , length: 1000                  , notnull: true                                                        }
+    observations:                      { type: string   , length: 1000                  , notnull: false                                                        }
     main:                              { type: string   , length: 1000                  , notnull: true                                                        }
     reception_method:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 'R'                                         }
     document_date:                     { type: timestamp                                                                                                       }

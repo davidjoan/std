@@ -51,7 +51,7 @@ abstract class BaseDocumentForm extends BaseFormDoctrine
       'qty'               => new sfValidatorInteger(array('required' => false)),
       'type'              => new sfValidatorString(array('max_length' => 1, 'required' => false)),
       'description'       => new sfValidatorString(array('max_length' => 1000)),
-      'observations'      => new sfValidatorString(array('max_length' => 1000)),
+      'observations'      => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
       'main'              => new sfValidatorString(array('max_length' => 1000)),
       'reception_method'  => new sfValidatorString(array('max_length' => 1, 'required' => false)),
       'document_date'     => new sfValidatorDateTime(array('required' => false)),

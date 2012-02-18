@@ -100,7 +100,7 @@ abstract class BaseRecord extends DoctrineRecord
         $this->hasColumn('description', 'string', 1000, array(
              'type' => 'string',
              'length' => 1000,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('status', 'string', 1, array(
              'type' => 'string',

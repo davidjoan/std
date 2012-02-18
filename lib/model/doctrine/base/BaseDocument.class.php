@@ -150,7 +150,7 @@ abstract class BaseDocument extends DoctrineRecord
         $this->hasColumn('observations', 'string', 1000, array(
              'type' => 'string',
              'length' => 1000,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('main', 'string', 1000, array(
              'type' => 'string',

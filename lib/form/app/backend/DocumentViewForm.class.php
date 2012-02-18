@@ -8,7 +8,7 @@
  * @author     David Joan Tataje Mendoza <dtataje@datasolutions.pe>
  * @version    SVN: $Id: sfDoctrineFormTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class DocumentForm extends BaseDocumentForm
+class DocumentViewForm extends BaseDocumentForm
 {
   public function initialize()
   {
@@ -34,46 +34,19 @@ class DocumentForm extends BaseDocumentForm
   
   public function configure()
   {
-    $area_id = sfContext::getInstance()->getUser()->getAreaId();      
-    $this->object->loadNextCode();
-    $this->object->setArea(Doctrine::getTable('Area')->findOneById($area_id));
-    $this->object->setUser(Doctrine::getTable('User')->findOneById(sfContext::getInstance()->getUser()->getUserId()));   
-    $this->setWidgets(array
+     $this->setWidgets(array
     (
       'id'                => new sfWidgetFormInputHidden(),
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
-      'document_class_id' => new sfWidgetFormDoctrineChoice
-                              (
-                                array
-                                (
-                                  'model' => 'DocumentClass', 
-                                  'add_empty' => '--- Seleccionar ---',
-                                  'order_by' => array('Name', 'ASC')
-                                )
-                              ),   
-     // 'document_date'     => new sfWidgetFormDateJQueryUI(array('change_month' => true, 'change_year' => true, 'show_button_panel' => true), array('readonly' => 'readonly')),            
-       'document_date'        => new sfWidgetFormDateExt(array
-                                (
-                                  'format'     => $this->widgetFormatter->getStandardDateFormat(),
-                                  'year_start' => date('Y') - 5,
-                                  'year_end'   => date('Y'),
-                                )),
-      'description'       => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
-      'representative_id' => new sfWidgetFormDoctrineChoice
-                              (
-                                array
-                                (
-                                  'model' => 'Representative', 
-                                  'add_empty' => '--- Seleccionar ---',
-                                  'order_by' => array('Lastname', 'ASC')
-                                )
-                              ),
-      
-      'main'              => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
-      'qty'               => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
-      'registration_type' => new sfWidgetFormSelect(array('choices' => $this->getTable()->getRegistrationType())),
-      'observations'      => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
-      'path'                 => new sfWidgetFormInputFileEditable
+      'document_class_id' => new sfWidgetFormValue(array('value' => $this->object->getDocumentClass()->getName())),   
+      'document_date'     => new sfWidgetFormValue(array('value' => $this->object->getDocumentDate())),   
+      'description'       => new sfWidgetFormValue(array('value' => $this->object->getDescription())),   
+      'representative_id' => new sfWidgetFormValue(array('value' => $this->object->getRepresentative())),
+      'main'              => new sfWidgetFormValue(array('value' => $this->object->getMain())),
+      'qty'               => new sfWidgetFormValue(array('value' => $this->object->getQty())),
+      'registration_type' => new sfWidgetFormValue(array('value' => $this->object->getRegistrationTypeName())),
+      'observations'      => new sfWidgetFormValue(array('value' => $this->object->getObservations())),
+      'path'              => new sfWidgetFormInputFileEditable
                                 (
                                   array
                                   (
@@ -91,9 +64,6 @@ class DocumentForm extends BaseDocumentForm
       'active'            => new sfWidgetFormSelect(array('choices' => $this->getTable()->getStatuss())),
             ));
         
-      $this->setDefaults(array(
-          'document_date' =>date('j/m/Y')
-      ));
       
     $this->addValidators(array
     (
