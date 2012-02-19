@@ -103,4 +103,20 @@ tERMINAR Expediente
 <?php else: ?>
 <?php endif; ?>
 
+<?php slot('extra') ?>
+<?php slot('record_log') ?>
+<?php include_partial('Record/record_log', array('record' => $form->getObject())) ?>
+<?php end_slot(); ?>
+<?php
+    include_partial
+	(
+	'Crud/presentation',
+	array
+	    (
+	    'title' => 'Hoja de Ruta',
+	    'slot' => 'record_log'
+	)
+    )
+?>
+<?php end_slot(); ?>
 <?php include_component('Crud', 'edit', array('form' => $form, 'action_uri' => $action_url)) ?>

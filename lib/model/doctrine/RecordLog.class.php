@@ -12,5 +12,9 @@
  */
 class RecordLog extends BaseRecordLog
 {
-
+  public function getStatusStr()
+  {
+    $actives = RecordTable::getInstance()->getStatuss();
+    return $actives[$this->getStatus()];
+  }
 }

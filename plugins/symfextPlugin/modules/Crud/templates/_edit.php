@@ -43,7 +43,9 @@
           <?php include_slot('form') ?>
         <?php endif ?>
       </table>
-    
+    <?php if (has_slot('extra')): ?>
+    <?php include_slot('extra') ?>
+    <?php endif; ?>    
       <input id="form_submit" type="submit" value="TestSave" style="display: none;"/> <!-- Just for testing compatibility -->
     </form>
   
