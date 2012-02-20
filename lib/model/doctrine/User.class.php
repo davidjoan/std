@@ -32,8 +32,8 @@ class User extends BaseUser
   
   public function getUserName()
   {
-  	return sprintf('%s, %s', $this->getLastName(), $this->getFirstName());
-  }  
+  	return $this->_get('username');
+  } 
 
   public function getProfileName()
   {
