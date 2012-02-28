@@ -79,16 +79,28 @@ class RecordTable extends DoctrineTable
   
    public function updateQueryForList(DoctrineQuery $q, array $params)
   {
-       $q->addSelect("r.*, CONCAT(u.first_name,' ', u.last_name) user_name, fa.name from_area_name, ta.name to_area_name")
+       
+           $query = Doctrine_Query::create()
+             ->select('COUNT(d.id)')
+             ->from('Document d')
+             ->where('d.record_id = r.id');
+
+     $q->addSelect("r.*, CONCAT(u.first_name,' ', u.last_name) user_name, fa.name area_origen_name, ta.name area_destino_name, (".$query->getDql().") documents_number")
       ->leftJoin('r.FromArea fa')
       ->leftJoin('r.ToArea ta')
-      ->leftJoin('r.User u')
-      ->andIntervalWhere('r.created_at',$params['from'], $params['to']);
+      ->leftJoin('r.User u');
+       
+      if($params['from'] <> '0' and $params['to'] <> '0')
+      {
+        $q->andIntervalWhere('r.created_at',$params['from'], $params['to']);    
+      }
+      
     if($params['status'])
     {
       $q->addWhere('r.status = ?', $params['status']);    
     }
     $area_id = sfContext::getInstance()->getUser()->getAreaId();
+    
     $q->andWhere('r.from_area_id = ?', $area_id)->orWhere('r.to_area_id = ?', $area_id);
     
     

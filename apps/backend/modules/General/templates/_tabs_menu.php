@@ -18,12 +18,12 @@
                 ))
           ?>            
 
-          <?php /*include_partial('General/tab', array
+          <?php include_partial('General/tab', array
                 (
                   'title'       => 'Documentos', 
                   'uri'         => '@document_list',
                   'image'       => 'backend/menu/inventory.gif',
-                ))*/
+                ))
           ?>            
           <?php include_partial('General/tab', array
                 (

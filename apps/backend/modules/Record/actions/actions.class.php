@@ -35,9 +35,10 @@ class RecordActions extends ActionsCrud
   {
     return array
     (
-      'fa'  => array('from_area_name' => 'name'),
-      'ta'  => array('to_area_name' => 'name'),
+      'fa'  => array('area_origen_name' => 'name'),
+      'ta'  => array('area_destino_name' => 'name'),
       'u'   => array('user_name' => 'last_name'),
+      'extra' => array('documents_number' => 'documents_number')
     );
   }
   

@@ -34,6 +34,7 @@ class RecordForm extends BaseRecordForm
   {
      $this->object->setUser(Doctrine::getTable('User')->findOneById(sfContext::getInstance()->getUser()->getUserId()));      
        $area_id = sfContext::getInstance()->getUser()->getAreaId();       
+     $status = sfContext::getInstance()->getRequest()->getParameter('status');
     if($this->object->getStatus() == RecordTable::STATUS_PENDING)
     {
       $area_id = sfContext::getInstance()->getUser()->getAreaId();
@@ -146,6 +147,43 @@ class RecordForm extends BaseRecordForm
         'updated_at'   => '-',
       );        
     }    
+    elseif($this->object->getStatus() == RecordTable::STATUS_DERIVED and $status == null){
+             $this->object->setFromArea(Doctrine::getTable('Area')->findOneById($area_id));
+   
+    $this->setWidgets(array
+    (
+      'id'                => new sfWidgetFormInputHidden(),
+      'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
+      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+      'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
+      'to_area_id'        => new sfWidgetFormValue(array('value' => $this->object->getToArea()->getName())), 
+      'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
+      'time_limit'        => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
+      'status_show'       => new sfWidgetFormValue(array('value' => $this->object->getStatusStr())),
+      'status'            => new sfWidgetFormInputHidden(),
+      'description'       => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
+            ));
+        
+
+      $this->types = array
+      (
+        'id'           => '=',
+        'from_area_id' => '-',
+        'to_area_id'   => '-',
+        'user_id'      => '-',
+        'code'         => '-',
+        'subject'      => 'text',
+        'time_limit'   => 'fixed_number',
+        'description'  => 'text',
+        'status'       => 'code',
+        'status_show'  => '-',  
+        'active'       => '-',
+        'slug'         => '-',
+        'created_at'   => '-',
+        'updated_at'   => '-',
+      );       
+      $this->validatorSchema['to_area_id']->setOption('required', true);
+    }   
       elseif($this->object->getStatus() == RecordTable::STATUS_DERIVED){
              $this->object->setFromArea(Doctrine::getTable('Area')->findOneById($area_id));
    
@@ -191,7 +229,7 @@ class RecordForm extends BaseRecordForm
         'updated_at'   => '-',
       );       
       $this->validatorSchema['to_area_id']->setOption('required', true);
-    } 
+    }     
     else {
     $this->setWidgets(array
     (

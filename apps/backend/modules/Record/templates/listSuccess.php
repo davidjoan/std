@@ -64,17 +64,17 @@ $params = array
         ),    
         'columns'            => array
                                 (
-                                  array('2' , ''                  , ''                , ''                                ),
-                                  array('7', 'code'              , 'Codigo'          , 'getCode'                         ),
-                                  //array('12', 'user_name'         , 'Usuario Creador' , 'getUserName'                     ),
-                                  array('14', 'from_area_name'    , 'Area Origen'     , 'getFromAreaName'                 ),
-                                  array('14', 'to_area_name'      , 'Area Destino'    , 'getToAreaName'                   ),
-                                  array('20', 'subject'           , 'Asunto'          , 'getSubject'                      ),
-                                  array('8', 'time_limit'        , 'Limite'          , 'getTimeLimitStr'                 ),
-                                  array('12', 'status'            , 'Estado'          , 'getStatusColorStr'                    ),
-                                  array('15', 'created_at'    , 'Fecha Creaci&oacute;n' , 'getFormattedDatetime'    ),
-                                                                    
-//array('6' , 'disable_image'     , 'Activo'          , 'getDisableImage', 'center', false),
+                                  array('2' , ''                  , ''                , ''                             ),
+                                  array('7', 'code'               , 'Codigo'          , 'getCode'                      ),
+                                  //array('12', 'user_name'         , 'Usuario Creador' , 'getUserName'                ),
+                                  array('14', 'area_origen_name'  , 'Area Origen'     , 'getAreaOrigenName'            ),
+                                  array('14', 'area_destino_name' , 'Area Destino'    , 'getAreaDestinoName'           ),
+                                  array('20', 'subject'           , 'Asunto'          , 'getSubject'                   ),
+                                  array('8', 'time_limit'         , 'Limite'          , 'getTimeLimitStr'              ),
+                                  array('8', 'documents_number'   , '# Docs'          , 'getDocumentsNumber'           ),
+                                  array('12', 'status'            , 'Estado'          , 'getStatusColorStr'            ),
+                                  array('15', 'created_at'        , 'Fecha Creaci&oacute;n' , 'getFormattedDatetime'   ),
+                                  //array('6' , 'disable_image'     , 'Activo'          , 'getDisableImage', 'center', false),
                                   array('2' , ''                  , ''                , 'checkbox'                        ),
                                 )
       ))

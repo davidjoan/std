@@ -62,8 +62,19 @@ Editar Expediente
   </table>
 
 <?php elseif($status == RecordTable::STATUS_RETURNED): ?>
-Devolver Expediente
 <?php $action_url = '@record_change_status?slug=' . $form->getObject()->getSlug().'&status='.$status; ?>
+<table class="buttons_container">
+    <tr>
+      <td align="right">
+        <table class="buttons">
+          <tr>
+            <td><?php echo button_to_function('Devolver', $function, array('type' => 'submit', 'id' => 'Save', 'class' => 'inputsubmit')) ?></td>
+            <td><?php echo button_to('Cancelar', get_entrance_route(), array('onclick' => true, 'class' => 'inputbutton inputaux')) ?></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 <?php elseif($status == RecordTable::STATUS_COMPLETED): ?>
 tERMINAR Expediente
 <?php $action_url = '@record_change_status?slug=' . $form->getObject()->getSlug().'&status='.$status; ?>
