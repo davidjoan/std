@@ -28,6 +28,7 @@ class RecordTable extends DoctrineTable
   protected static
     $status                = array
                              (
+                               ''                       => '--- Seleccionar ---',
                                self::STATUS_PENDING     => 'Pendiente',
                                self::STATUS_RECEIVED    => 'Recibido',
                                self::STATUS_DERIVED     => 'Derivado',

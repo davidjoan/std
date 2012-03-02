@@ -13,6 +13,12 @@ class GeneralComponents extends ComponentsProject
   {
     $this->visits    = Doctrine::getTable('Visit')->count();
     
+    $this->records   = Doctrine::getTable('Record')->count();
+    
+    $this->documents = Doctrine::getTable('Document')->count();
+    
+    $this->users = Doctrine::getTable('User')->count();
+    
     $this->lastVisit = Doctrine::getTable('Visit')->findLast();
   }
 }

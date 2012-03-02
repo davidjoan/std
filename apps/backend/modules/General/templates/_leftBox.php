@@ -4,9 +4,17 @@
   </tr>
   <tr><td></td></tr>
   <tr>
-    <td>Cantidad de Visitas:</td>
-    <td><?php echo $visits ?></td>
+    <td>Cantidad de Expedientes:</td>
+    <td><?php echo $records; ?></td>
   </tr>
+  <tr>
+    <td>Cantidad de Documentos:</td>
+    <td><?php echo $documents; ?></td>
+  </tr>  
+  <tr>
+    <td>Cantidad de Usuarios:</td>
+    <td><?php echo $users; ?></td>
+  </tr>    
   <tr><td></td></tr>
   <tr><td></td></tr>
   <tr>

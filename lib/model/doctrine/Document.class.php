@@ -35,8 +35,8 @@ class Document extends BaseDocument
     return $actives[$this->getRegistrationType()];
   }  
   
-  /*public function getDocumentDate()
+  public function getDocumentDate()
   {
     return $this->getTable()->getDateTimeFormatter()->format($this->_get('document_date'), 'd');
-  } */ 
+  }
 }

@@ -55,7 +55,7 @@ $params = array
                                   'code'           => 'Código',
                                   'name'           => 'Nombre',
                                   'subject'        => 'Asunto',
-                                  'time_limit_str' => 'Limite',
+                                  'time_limit'     => 'Limite',
                                 ),
         'buttons' => array
         (
