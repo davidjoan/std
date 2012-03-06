@@ -1,2 +1,3 @@
 all:
   site:                  "SERING STD"
+  domain:                "http://localhost:8587/backend_dev.php"

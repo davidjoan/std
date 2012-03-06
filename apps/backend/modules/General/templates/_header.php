@@ -9,7 +9,7 @@
         setInterval(function() {
             
             $.ajax({
-                url: "/notify",
+                url: "<?php echo sfConfig::get('app_domain'); ?>/notify",
                 success: function(data){
                     var qty = data['qty'];
                     
