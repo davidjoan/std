@@ -15,7 +15,7 @@
   <body>
     <div class="wrap">
       <div class="header">
-        <?php include_partial('General/header') ?>
+        <?php include_component('General', 'header') ?>
       </div>
       
       <div class="content">

@@ -21,4 +21,9 @@ class GeneralComponents extends ComponentsProject
     
     $this->lastVisit = Doctrine::getTable('Visit')->findLast();
   }
+  
+  public function executeHeader()
+  {
+      $this->records = Doctrine::getTable('Record')->qtyOfRecords();
+  }
 }

@@ -53,7 +53,6 @@ $params = array
         'filter_fields'      => array
                                 (
                                   'code'           => 'Código',
-                                  'name'           => 'Nombre',
                                   'subject'        => 'Asunto',
                                   'time_limit'     => 'Limite',
                                 ),

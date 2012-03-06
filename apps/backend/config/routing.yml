@@ -1,3 +1,7 @@
+ajax_notify:
+  url:             /notify/*
+  param:           { module: Ajax, action: notify }
+
 record_show:
   url:             /mostrar/expediente/:slug
   param:           { module: Record, action: show }

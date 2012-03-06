@@ -78,7 +78,7 @@ class RecordTable extends DoctrineTable
   	 return $q;
   } 
   
-   public function updateQueryForList(DoctrineQuery $q, array $params)
+   public function updateQueryForList(DoctrineQuery $q, $params)
   {
        
            $query = Doctrine_Query::create()
@@ -108,6 +108,12 @@ class RecordTable extends DoctrineTable
     
     
     return $q;
+  }
+  
+  public function qtyOfRecords()
+  {
+      $q = $this->createAliasQuery();
+      return $this->updateQueryForList($q, null)->execute()->count();
   }
 
 }
