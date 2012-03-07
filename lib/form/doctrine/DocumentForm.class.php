@@ -15,20 +15,20 @@ class DocumentForm extends BaseDocumentForm
     $this->labels = array
                     (
                       //'record_id'         => 'Registro',
-                      'representative_id' => 'Remitente',
+                    //  'representative_id' => 'Remitente',
                       'path'              => 'Documento Digital',
-                      'document_class_id' => 'Tipo de registro',
+                      'document_class_id' => 'Tipo de documento',
                       'code'              => 'Código',
                       'qty'               => 'Folios',
                       'type'              => 'Tipo de tramite',
-                      'description'       => 'Documento',
+                      'description'       => 'Remitente',
                       'observations'      => 'Observación',
                       'main'              => 'Asunto',
                       'reception_method'  => 'Metodo de Recepción',
                       'document_date'     => 'Fecha de Documento',
                       'reception_date'    => 'Fecha de Recepcion',
                       'registration_type' => 'Tipo de Tramite',
-                      'active'            => 'Activo'
+                   //   'active'            => 'Activo'
                     ); 
   }    
   
@@ -58,8 +58,9 @@ class DocumentForm extends BaseDocumentForm
                                   'year_start' => date('Y') - 5,
                                   'year_end'   => date('Y'),
                                 )),
-      'description'       => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
-      'representative_id' => new sfWidgetFormDoctrineChoice
+      //'description'       => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
+      'description'       => new sfWidgetFormInput(array(), array('size' => '50')),
+ /*     'representative_id' => new sfWidgetFormDoctrineChoice
                               (
                                 array
                                 (
@@ -68,7 +69,7 @@ class DocumentForm extends BaseDocumentForm
                                   'order_by' => array('Lastname', 'ASC')
                                 )
                               ),
-      
+      */
       'main'              => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
       'qty'               => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
       'registration_type' => new sfWidgetFormSelect(array('choices' => $this->getTable()->getRegistrationType())),
@@ -88,7 +89,7 @@ class DocumentForm extends BaseDocumentForm
                                   array('size'         => '60',)
                                 ),
         
-      'active'            => new sfWidgetFormSelect(array('choices' => $this->getTable()->getStatuss())),
+    //  'active'            => new sfWidgetFormSelect(array('choices' => $this->getTable()->getStatuss())),
             ));
         
       $this->setDefaults(array(
@@ -111,25 +112,33 @@ class DocumentForm extends BaseDocumentForm
       'record_id'         => '-',
       'area_id'           => '-',
       'user_id'           => '-',
-      'representative_id' => 'combo',
+      'representative_id' => '-',
       'document_class_id' => 'combo',
       'code'              => '-',
       'issue'             => '-',
       'qty'               => 'fixed_number',
       'type'              => '-',
-      'description'       => '=',
+      'description'       => 'name',
       'observations'      => 'text',
-      'main'              => '=',
+      'main'              => 'text',
       'reception_method'  => '-',
       'document_date'     => 'date',
       'path'              => 'file',
       'reception_date'    => '-',
       'registration_type' => array('combo', array('choices' => array_keys($this->getObject()->getTable()->getRegistrationType()))),
-      'active'            => array('combo', array('choices' => array_keys($this->getObject()->getTable()->getStatuss()))),
+    //  'active'            => array('combo', array('choices' => array_keys($this->getObject()->getTable()->getStatuss()))),
+      'active'            => '-',
       'slug'              => '-',
       'created_at'        => '-',
       'updated_at'        => '-',
       );
+      
+      
+      $this->validatorSchema['document_class_id']->setOption('required', true); 
+      $this->validatorSchema['document_date']->setOption('required', true); 
+      $this->validatorSchema['description']->setOption('required', true); 
+      $this->validatorSchema['main']->setOption('required', true); 
+      $this->validatorSchema['registration_type']->setOption('required', true); 
 
       
   }

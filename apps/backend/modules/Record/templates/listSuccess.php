@@ -8,13 +8,13 @@ $params = array
     'from' => array('id' => 'from'),
     'to' => array('id' => 'to'),
     'status' => array('id' => 'status'),
-    'filter_by' => array('id' => 'filter_by'),
-    'filter' => array('id' => 'filter', 'filter' => true),
     'order_by' => array('id' => 'order_by'),
     'order' => array('id' => 'order'),
     'max' => array('id' => 'max'),
     'page' => array('id' => 'page'),
 );
+
+$uri = '@record_list?from=from&to=to&status=status&order_by=order_by&order=order&max=max&page=page';
 ?>
 
 
@@ -40,6 +40,13 @@ $params = array
       <td>Estado:</td>
       <td colspan="4"><?php echo select_tag('status', Doctrine::getTable('Record')->getStatuss(), $sf_params->get('status')) ?></td>
 </tr>
+<tr>
+    <td></td>
+    <td>
+        <?php echo button_to_get_url('Buscar', $uri, $params, array('id' => 'button_list_search', 'class' => 'inputsubmit')) ?>
+    </td>
+        
+</tr>
 </table>
 <?php end_slot() ?>
 
@@ -47,15 +54,15 @@ $params = array
       (
         'pager'              => $pager,
         'params'             => $params,                    
-        'uri'                => '@record_list?from=from&to=to&status=status&filter_by=filter_by&filter=filter&order_by=order_by&order=order&max=max&page=page',
+        'uri'                => $uri,
                                 
         'edit_field'         => 'code',
-        'filter_fields'      => array
+     /*   'filter_fields'      => array
                                 (
                                   'code'           => 'Código',
                                   'subject'        => 'Asunto',
                                   'time_limit'     => 'Limite',
-                                ),
+                                ),*/
         'buttons' => array
         (
           'delete' => false,

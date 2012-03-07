@@ -47,7 +47,7 @@ class RecordForm extends BaseRecordForm
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
       'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
       'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
-      'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
+      'subject'           => new sfWidgetFormInput(array(), array('size' => '80')),
       'time_limit'        => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
       'status_show'       => new sfWidgetFormValue(array('value' => $this->object->getStatusStr())),
       'status'            => new sfWidgetFormInputHidden(),

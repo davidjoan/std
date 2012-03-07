@@ -60,8 +60,9 @@ class RecordTable extends DoctrineTable
     
     $qty = $q->count();
     $code   = $qty+1;
+    $year = date('Y');
     
-    return str_pad($code, 8, '0', STR_PAD_LEFT);
+    return str_pad($code, 8, '0', STR_PAD_LEFT).'-'.$year;
   }
   
   public function getOtherAreas($area_id)
