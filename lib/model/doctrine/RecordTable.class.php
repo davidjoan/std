@@ -99,11 +99,11 @@ class RecordTable extends DoctrineTable
       
     if($params['status'])
     {
-      $q->addWhere('r.status = ?', $params['status']);    
+      $q->andWhere('r.status = ?', $params['status']);    
     }
     $area_id = sfContext::getInstance()->getUser()->getAreaId();
     
-    $q->andWhere('r.from_area_id = ?', $area_id)->orWhere('r.to_area_id = ?', $area_id);
+    $q->andWhere('(r.from_area_id = ? OR r.to_area_id = ?)', array($area_id, $area_id));
     
     
     

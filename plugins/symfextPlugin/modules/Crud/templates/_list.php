@@ -48,7 +48,7 @@
     
     <?php if (isset($filter_fields)): ?>
       <tr>
-        <td colspan="5"><?php include_partial('Generic/alphabet_links', array('uri' => $uri, 'params' => $params, 'filter' => $sf_params->get('filter'))) ?></td>
+        <td colspan="5"><?php //include_partial('Generic/alphabet_links', array('uri' => $uri, 'params' => $params, 'filter' => $sf_params->get('filter'))) ?></td>
       </tr>
     <?php endif ?>
   </table>

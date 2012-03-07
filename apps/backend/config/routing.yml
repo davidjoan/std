@@ -20,7 +20,7 @@ record_list:
     action:                  list
     from:                    0
     to:                      0
-    status:                  0
+    status:                  1
     filter_by:               id 
     filter:                  0 
     order_by:                id
