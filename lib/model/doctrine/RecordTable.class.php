@@ -28,12 +28,12 @@ class RecordTable extends DoctrineTable
   protected static
     $status                = array
                              (
-                               ''                       => '--- Seleccionar ---',
+                               ''                       => '--- Todos ---',
                                self::STATUS_PENDING     => 'Pendiente',
                                self::STATUS_RECEIVED    => 'Recibido',
                                self::STATUS_DERIVED     => 'Derivado',
                                self::STATUS_RETURNED    => 'Devuelto',
-                               self::STATUS_COMPLETED   => 'Completado',
+                               self::STATUS_COMPLETED   => 'Finalizado',
                              );
   
   protected static

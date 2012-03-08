@@ -22,13 +22,17 @@ $uri = '@record_list?from=from&to=to&status=status&filter_by=filter_by&filter=fi
 
 
 <?php slot('buttons') ?>
+
+
 <td><?php echo button_to_get_url('Recibir', '@record_change_status?slug=slug&status='.RecordTable::STATUS_RECEIVED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
 <td><?php echo button_to_get_url('Derivar', '@record_change_status?slug=slug&status='.RecordTable::STATUS_DERIVED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
 <td><?php echo button_to_get_url('Devolver', '@record_change_status?slug=slug&status='.RecordTable::STATUS_RETURNED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
-<td><?php echo button_to_get_url('Completar', '@record_change_status?slug=slug&status='.RecordTable::STATUS_COMPLETED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+<td><?php echo button_to_get_url('Finalizar', '@record_change_status?slug=slug&status='.RecordTable::STATUS_COMPLETED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+
+<td><?php echo button_to_get_url('Imprimir', '@report_record_list?slug=slug', array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'to_delete' => false)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
 <?php end_slot() ?>
 

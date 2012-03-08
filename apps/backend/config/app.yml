@@ -1,3 +1,10 @@
 all:
   site:                  "SERING STD"
   domain:                "http://localhost:8587/backend_dev.php"
+  meta:
+    creator:      sistema de tramite documentario
+    title:        reporte de tramite documentario
+    subject:      documento de tramite documentario
+    description:  documentos del sistema de tramite documentario
+    keywords:     tramite,documentario,sering
+    category:     tramite documentario  

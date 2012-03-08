@@ -12,7 +12,8 @@ class ProjectConfiguration extends sfProjectConfigurationExt
            (
              'sfDoctrinePlugin',
              'sfFormExtraPlugin',
-             'symfextPlugin'
+             'symfextPlugin',
+             'sfPhpExcelPlugin'
            );
   }
   

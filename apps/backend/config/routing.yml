@@ -1,3 +1,7 @@
+report_record_list:
+  url:              /reporte/record/list/*
+  param:            { module: Report, action: printRecordList }
+
 ajax_notify:
   url:             /notify/*
   param:           { module: Ajax, action: notify }
