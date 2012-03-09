@@ -1,5 +1,9 @@
+report_record_print:
+  url:              /reporte/un/expediente/*
+  param:            { module: Report, action: printRecord }
+
 report_record_list:
-  url:              /reporte/record/list/*
+  url:              /reporte/varios/expedientes/*
   param:            { module: Report, action: printRecordList }
 
 ajax_notify:

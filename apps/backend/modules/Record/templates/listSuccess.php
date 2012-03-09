@@ -33,7 +33,9 @@ $checkbox = "<input type=\"checkbox\" value=\"seleccionar\" id=\"seleccionar_tod
 
 <td><?php echo button_to_get_url('Finalizar', '@record_change_status?slug=slug&status=' . RecordTable::STATUS_COMPLETED, array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
-<td><?php echo button_to_get_url('Imprimir', '@report_record_list?slug=slug', array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'to_delete' => false)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+<td><?php echo button_to_get_url('Imprimir Varios', '@report_record_list?slug=slug', array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'to_delete' => false)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
+
+<td><?php echo button_to_get_url('Imprimir Uno', '@report_record_print?slug=slug', array('slug' => array('id' => 'record_slug', 'list' => true, 'validate' => true, 'to_delete' => false, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
 
 <?php end_slot() ?>
 
