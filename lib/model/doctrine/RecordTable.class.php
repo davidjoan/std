@@ -97,9 +97,9 @@ class RecordTable extends DoctrineTable
         $q->andIntervalWhere('r.created_at',$params['from'], $params['to']);    
       }
       
-    if($params['status'])
+    if($params['record_status'])
     {
-      $q->andWhere('r.status = ?', $params['status']);    
+      $q->andWhere('r.status = ?', $params['record_status']);    
     }
     $area_id = sfContext::getInstance()->getUser()->getAreaId();
     

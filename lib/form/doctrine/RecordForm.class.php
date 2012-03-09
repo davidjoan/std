@@ -26,6 +26,8 @@ class RecordForm extends BaseRecordForm
                       'description'  => 'Observaciones',
                       'status_show'  => 'Estado',
                       'status'       => 'Estado',
+                      'action'       => 'Acción',
+                      'location'     => 'Ubicación donde se archivará',
                       'to_area_id_show' => 'Area Destino'
                     ); 
   }    
@@ -71,10 +73,51 @@ class RecordForm extends BaseRecordForm
         'slug'         => '-',
         'created_at'   => '-',
         'updated_at'   => '-',
+        'action'       => '-',
+        'location'     => '-',
       );        
         
     }
-    elseif($this->object->getStatus() == RecordTable::STATUS_RECEIVED or $this->object->getStatus() == RecordTable::STATUS_COMPLETED ){
+    elseif($this->object->getStatus() == RecordTable::STATUS_COMPLETED ){
+    $this->setWidgets(array
+    (
+      'id'                => new sfWidgetFormInputHidden(),
+      'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
+      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+      'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
+      'to_area_id'        => new sfWidgetFormValue(array('value' => $this->object->getToArea()->getName())), 
+      'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
+      'time_limit'        => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
+      'status_show'       => new sfWidgetFormValue(array('value' => $this->object->getStatusStr())),
+      'status'            => new sfWidgetFormInputHidden(),
+      'description'       => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
+      'location'          => new sfWidgetFormInput(array(), array('size' => '50')),        
+            ));
+        
+
+      $this->types = array
+      (
+        'id'           => '=',
+        'from_area_id' => '-',
+        'to_area_id'   => '-',
+        'user_id'      => '-',
+        'code'         => '-',
+        'subject'      => 'text',
+        'time_limit'   => 'fixed_number',
+        'description'  => 'text',
+        'status'       => 'code',
+        'status_show'  => '-',  
+        'active'       => '-',
+        'slug'         => '-',
+        'created_at'   => '-',
+        'updated_at'   => '-',
+        'action'       => '-',
+        'location'     => 'text',
+      );        
+      
+      $this->validatorSchema['location']->setOption('required', true);
+    }    
+    elseif($this->object->getStatus() == RecordTable::STATUS_RECEIVED){
     $this->setWidgets(array
     (
       'id'                => new sfWidgetFormInputHidden(),
@@ -106,6 +149,8 @@ class RecordForm extends BaseRecordForm
         'slug'         => '-',
         'created_at'   => '-',
         'updated_at'   => '-',
+        'action'       => '-',
+        'location'     => '-',
       );        
     }
     elseif($this->object->getStatus() == RecordTable::STATUS_RETURNED){
@@ -145,6 +190,8 @@ class RecordForm extends BaseRecordForm
         'slug'         => '-',
         'created_at'   => '-',
         'updated_at'   => '-',
+        'action'       => '-',
+        'location'     => '-',
       );        
     }    
     elseif($this->object->getStatus() == RecordTable::STATUS_DERIVED and $status == null){
@@ -181,6 +228,8 @@ class RecordForm extends BaseRecordForm
         'slug'         => '-',
         'created_at'   => '-',
         'updated_at'   => '-',
+        'action'       => '-',
+        'location'     => '-',
       );       
       $this->validatorSchema['to_area_id']->setOption('required', true);
     }   
@@ -206,6 +255,7 @@ class RecordForm extends BaseRecordForm
       'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
       'time_limit'        => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
       'status_show'       => new sfWidgetFormValue(array('value' => $this->object->getStatusStr())),
+      'action'            => new sfWidgetFormInput(array(), array('size' => '50')),
       'status'            => new sfWidgetFormInputHidden(),
       'description'       => new sfWidgetFormTextarea(array(), array('cols' => '40', 'rows' => '3')),
             ));
@@ -227,6 +277,8 @@ class RecordForm extends BaseRecordForm
         'slug'         => '-',
         'created_at'   => '-',
         'updated_at'   => '-',
+        'action'       => 'text',
+        'location'     => '-',
       );       
       $this->validatorSchema['to_area_id']->setOption('required', true);
     }     
@@ -262,6 +314,8 @@ class RecordForm extends BaseRecordForm
         'slug'         => '-',
         'created_at'   => '-',
         'updated_at'   => '-',
+        'action'       => '-',
+        'location'     => '-',
       );        
     }
     

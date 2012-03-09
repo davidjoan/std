@@ -14,6 +14,8 @@
  * @property integer $time_limit
  * @property string $description
  * @property string $status
+ * @property string $location
+ * @property string $action
  * @property string $active
  * @property User $User
  * @property Area $FromArea
@@ -30,6 +32,8 @@
  * @method integer             getTimeLimit()    Returns the current record's "time_limit" value
  * @method string              getDescription()  Returns the current record's "description" value
  * @method string              getStatus()       Returns the current record's "status" value
+ * @method string              getLocation()     Returns the current record's "location" value
+ * @method string              getAction()       Returns the current record's "action" value
  * @method string              getActive()       Returns the current record's "active" value
  * @method User                getUser()         Returns the current record's "User" value
  * @method Area                getFromArea()     Returns the current record's "FromArea" value
@@ -45,6 +49,8 @@
  * @method Record              setTimeLimit()    Sets the current record's "time_limit" value
  * @method Record              setDescription()  Sets the current record's "description" value
  * @method Record              setStatus()       Sets the current record's "status" value
+ * @method Record              setLocation()     Sets the current record's "location" value
+ * @method Record              setAction()       Sets the current record's "action" value
  * @method Record              setActive()       Sets the current record's "active" value
  * @method Record              setUser()         Sets the current record's "User" value
  * @method Record              setFromArea()     Sets the current record's "FromArea" value
@@ -108,6 +114,16 @@ abstract class BaseRecord extends DoctrineRecord
              'fixed' => 1,
              'notnull' => true,
              'default' => 1,
+             ));
+        $this->hasColumn('location', 'string', 100, array(
+             'type' => 'string',
+             'length' => 100,
+             'notnull' => false,
+             ));
+        $this->hasColumn('action', 'string', 100, array(
+             'type' => 'string',
+             'length' => 100,
+             'notnull' => false,
              ));
         $this->hasColumn('active', 'string', 1, array(
              'type' => 'string',

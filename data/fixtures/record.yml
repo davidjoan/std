@@ -3,7 +3,7 @@ Record:
     FromArea: Area_1
     ToArea:   Area_4
     User:     User_1
-    code:     00001000
+    code:     '00001000-2012'
     subject:  'Revisalo'
     time_limit: 5
     description: 'jajaja'

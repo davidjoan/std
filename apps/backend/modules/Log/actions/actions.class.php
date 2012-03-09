@@ -22,7 +22,7 @@ class LogActions extends ActionsProject
 				$user = Doctrine::getTable('User')->findOneByLowerCaseUsername($this->form->getValue('username'));
 				$this->getUser()->login($user);
 	
-				return $this->redirect('@record_list');
+				return $this->redirect('@record_list?record_status=1');
 			}
 		}
 	}

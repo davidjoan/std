@@ -11,4 +11,8 @@
     <td>Estado:</td>
     <td class="value"><?php echo $record_log->getStatusStr() ?></td>
   </tr>
+  <tr>
+    <td>Descripción:</td>
+    <td class="value"><?php echo $record_log->getDescription() ?></td>
+  </tr>  
 </table>

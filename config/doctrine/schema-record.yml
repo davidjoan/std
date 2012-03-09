@@ -72,14 +72,16 @@ Record:
     Timestampable:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
-    from_area_id:                      { type: integer  , length: 20                    , notnull: false                                                        }
-    to_area_id:                        { type: integer  , length: 20                    , notnull: false                                                        }
+    from_area_id:                      { type: integer  , length: 20                    , notnull: false                                                       }
+    to_area_id:                        { type: integer  , length: 20                    , notnull: false                                                       }
     user_id:                           { type: integer  , length: 20                    , notnull: true                                                        }
     code:                              { type: string   , length: 20                    , notnull: true                                                        }
     subject:                           { type: string   , length: 250                   , notnull: true                                                        }
     time_limit:                        { type: integer  , length: 20                                                                                           }
-    description:                       { type: string   , length: 1000                  , notnull: false                                                        }
+    description:                       { type: string   , length: 1000                  , notnull: false                                                       }
     status:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
+    location:                          { type: string   , length: 100                   , notnull: false                                                       }
+    action:                            { type: string   , length: 100                   , notnull: false                                                       }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                                           }
   relations:
     User:                              { class: User              , local: user_id      , foreign: id         , type: one  , alias: User    , onDelete: CASCADE, onUpdate: CASCADE   }

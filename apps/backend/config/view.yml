@@ -22,6 +22,7 @@ default:
     - general/general.js
     - jquery/i18n/jquery-ui-i18n.js
     - jquery/jquery.notify.js
+    - jquery/jquery.checkboxes.pack.js
 
   has_layout:     true
   layout:         layout

@@ -15,7 +15,7 @@
                     
                     if(qty > records)
                     {
-                        create("default", { title:'Nuevos Expedientes', text:'Porfavor haga click <a href=\'<?php echo sfConfig::get('app_domain'); ?>/listar/expediente\'><b style=\'color: #FFFFFF; font: bold 34px;\'>Aqui</b></a> para ver los cambios.'},{ expires:false });
+                        create("default", { title:'Nuevos Expedientes', text:'Porfavor haga click <a href=\'<?php echo sfConfig::get('app_domain'); ?>/listar/expediente/0/0/0/code/0/id/a/20/1\'><b style=\'color: #FFFFFF; font: bold 34px;\'>Aqui</b></a> para ver los cambios.'},{ expires: true });
                     }
                     
                 }

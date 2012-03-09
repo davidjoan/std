@@ -17,6 +17,8 @@ class ReportActions extends ActionsProject {
 
         $objPHPExcel = new sfPhpExcel();
         $username = $this->getUser()->getUsername();
+        
+        $records = Doctrine::getTable('Record')->findBySlugs($slugs);
 // Set properties
 
         $objPHPExcel->setActiveSheetIndex(0);
@@ -24,8 +26,11 @@ class ReportActions extends ActionsProject {
         $objPHPExcel->getActiveSheet()->setCellValue('H2', 'Fecha');
         $objPHPExcel->getActiveSheet()->setCellValue('I2', date('d/m/Y h:m:i'));
         $objPHPExcel->getActiveSheet()->setCellValue('I1', $username);
+        $objPHPExcel->getActiveSheet()->getStyle('H1')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('H2')->getFont()->setBold(true);
         
-        $objPHPExcel->getActiveSheet()->setCellValue('D6', 'LISTADO DE EXPEDIENTES');
+        $objPHPExcel->getActiveSheet()->setCellValue('E6', 'LISTADO DE EXPEDIENTES');
+        $objPHPExcel->getActiveSheet()->getStyle('E6')->getFont()->setBold(true);
         
         $objPHPExcel->getActiveSheet()->setCellValue('B10', 'ITEM');
         $objPHPExcel->getActiveSheet()->setCellValue('C10', 'COD. EXPEDIENTE');
@@ -35,7 +40,40 @@ class ReportActions extends ActionsProject {
         $objPHPExcel->getActiveSheet()->setCellValue('G10', 'ESTADO');
         $objPHPExcel->getActiveSheet()->setCellValue('H10', 'USUARIO ACTUAL');
         $objPHPExcel->getActiveSheet()->setCellValue('I10', 'FECHA DE MOVIMIENTO');
+        $objPHPExcel->getActiveSheet()->getStyle('B10')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('C10')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('D10')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('E10')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('F10')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('G10')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('H10')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('I10')->getFont()->setBold(true);
         
+        $init_row = 11;
+        foreach($records as $key => $record)
+        {
+          $init_row = $init_row + $key;
+          
+          $objPHPExcel->getActiveSheet()->setCellValue('B'.$init_row, $key+1);
+          $objPHPExcel->getActiveSheet()->setCellValue('C'.$init_row, $record->getCode());
+          $objPHPExcel->getActiveSheet()->setCellValue('D'.$init_row, $record->getFormattedDatetime());
+          $objPHPExcel->getActiveSheet()->setCellValue('E'.$init_row, $record->getSubject());
+          $objPHPExcel->getActiveSheet()->setCellValue('F'.$init_row, $record->getQtyDocs());
+          $objPHPExcel->getActiveSheet()->setCellValue('G'.$init_row, $record->getStatusStr());
+          $objPHPExcel->getActiveSheet()->setCellValue('H'.$init_row, $record->getUserName());
+          $objPHPExcel->getActiveSheet()->setCellValue('I'.$init_row, $record->getFormattedUpdatedAt());              
+          
+         
+        }        
+        
+        $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(10);
+        $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(23);
+        $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(23);
+        $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(33);
+        $objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(12);
+        $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(14);
+        $objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(25);
+        $objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(19);
         
         $objDrawing = new PHPExcel_Worksheet_Drawing();
         $objDrawing->setName('Logo');
@@ -45,16 +83,11 @@ class ReportActions extends ActionsProject {
         
         $objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 
-        							
-
-// Rename sheet
         $objPHPExcel->getActiveSheet()->setTitle('Simple');
 
-
-// Set active sheet index to the first sheet, so Excel opens this as the first sheet
         $objPHPExcel->setActiveSheetIndex(0);
         
-        $objPHPExcel->getActiveSheet()->setAutoFilter('B10:J10');	// Always include the complete filter range!
+        $objPHPExcel->getActiveSheet()->setAutoFilter('B10:I'.$init_row);
 
 
 

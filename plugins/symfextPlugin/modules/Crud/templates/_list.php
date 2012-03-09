@@ -88,7 +88,7 @@
               <?php if ($listColumn->method == 'partial'): ?>
                 <?php include_partial($modelClass.'/'.$listColumn->field, array($usClass => $record)) ?>
               <?php elseif ($listColumn->method == 'checkbox'): ?>
-                <input type="checkbox" id="<?php echo $record->getSlug() ?>" name="<?php echo $record->getSlug() ?>" value="<?php echo $record->getSlug() ?>" onclick="toggleSlug(this, '<?php echo $usClass ?>_slug')" />
+                <input type="checkbox" id="<?php echo $record->getSlug() ?>" name="seleccion[]" value="<?php echo $record->getSlug() ?>" onclick="toggleSlug(this, '<?php echo $usClass ?>_slug')" />
               <?php else: ?>
                 <?php if ($listColumn->field == '' || $record->{$listColumn->method}() == ''):?>
                   &nbsp;

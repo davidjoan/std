@@ -43,7 +43,7 @@ class User extends BaseUser
   {
     return $this->getProfile()->getActions();
   }
-  public function getLastAccessAtFormatedByProfile($format = 'M-d-y H:i')
+  public function getLastAccessAtFormatedByProfile($format = 'M-d-y H:m:i')
   {
   	return ($this->getProfileId() != 1) ? $this->getLastAccessAt($format) : 'hidden';
   }  

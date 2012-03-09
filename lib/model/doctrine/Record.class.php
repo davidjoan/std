@@ -50,6 +50,11 @@ class Record extends BaseRecord
     return $this->getTable()->getDateTimeFormatter()->format($this->getCreatedAt(), $format);
   }
   
+  public function getFormattedUpdatedAt($format = 'dd-MM-yyyy HH:mm:ss')
+  {
+    return $this->getTable()->getDateTimeFormatter()->format($this->getUpdatedAt(), $format);
+  }
+  
   public function doLogCreationAccordingStatusChanges()
   {
     if ($this->isColumnModified('status'))
@@ -69,6 +74,7 @@ class Record extends BaseRecord
       $recordLog->setTimeLimit($this->getTimeLimit());
           
       $this->RecordLogs[] = $recordLog;
+      $this->setDescription("");
     }
   }  
   
@@ -125,6 +131,17 @@ class Record extends BaseRecord
                   break;
           }      
           return $validation;
+  }
+  
+  public function getQtyDocs()
+  {
+      $count = 0;
+      foreach($this->getDocuments() as $document)
+      {
+          $count++;
+      }
+      
+      return $count;
   }
   
 }
