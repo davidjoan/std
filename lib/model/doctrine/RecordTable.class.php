@@ -99,7 +99,15 @@ class RecordTable extends DoctrineTable
       
     if($params['record_status'])
     {
-      $q->andWhere('r.status = ?', $params['record_status']);    
+        if($params['record_status'] == '100')
+        {
+          $q->whereIn('r.status',array(RecordTable::STATUS_PENDING, RecordTable::STATUS_DERIVED));
+        }
+        else
+        {
+          $q->andWhere('r.status = ?', $params['record_status']);          
+        }
+      
     }
     $area_id = sfContext::getInstance()->getUser()->getAreaId();
     
