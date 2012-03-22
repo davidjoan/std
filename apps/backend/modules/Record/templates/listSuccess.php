@@ -1,3 +1,4 @@
+<?php include_partial('General/alerts')?>
 <?php slot('title') ?>
 Expedientes
 <?php end_slot() ?>
@@ -7,6 +8,8 @@ $params = array
     (
     'from' => array('id' => 'from'),
     'to' => array('id' => 'to'),
+    'area' => array('id' => 'area'),
+    'tipo' => array('id' => 'tipo'),
     'record_status' => array('id' => 'record_status'),
     'filter_by' => array('id' => 'filter_by'),
     'filter' => array('id' => 'filter', 'filter' => true),
@@ -16,8 +19,8 @@ $params = array
     'page' => array('id' => 'page'),
 );
 
-$uri = '@record_list?from=from&to=to&record_status=record_status&filter_by=filter_by&filter=filter&order_by=order_by&order=order&max=max&page=page';
-$checkbox = "<input type=\"checkbox\" value=\"seleccionar\" id=\"seleccionar_todo\" name=\"seleccionar_todo\">";
+$uri = '@record_list?from=from&to=to&area=area&tipo=tipo&record_status=record_status&filter_by=filter_by&filter=filter&order_by=order_by&order=order&max=max&page=page';
+$checkbox = "<input type=\"checkbox\" value=\"nothings\" id=\"seleccionar_todo\" name=\"seleccionar_todo\">";
 ?>
 
 
@@ -50,6 +53,11 @@ $checkbox = "<input type=\"checkbox\" value=\"seleccionar\" id=\"seleccionar_tod
         <td colspan="4"><?php echo select_tag('record_status', Doctrine::getTable('Record')->getStatuss(), $sf_params->get('record_status')) ?></td>
     </tr>
     <tr>
+        <td>Area:</td>
+        <td colspan="3"><?php echo select_doctrine_tag('area', 'Area', $sf_params->get('area')) ?></td>
+        <td><?php echo select_tag('tipo', array(0 => 'Origen', 1 => 'Destino'), $sf_params->get('tipo')) ?></td>
+    </tr>    
+    <tr>
         <td></td>
         <td>
             <?php //echo button_to_get_url('Buscar', $uri, $params, array('id' => 'button_list_search', 'class' => 'inputsubmit')) ?>
@@ -65,7 +73,7 @@ include_component('Crud', 'list', array
     'pager' => $pager,
     'params' => $params,
     'uri' => $uri,
-    'edit_field' => 'code',
+ //   'edit_field' => 'code',
     'filter_fields' => array
         (
         'code' => 'Código',
@@ -83,6 +91,8 @@ include_component('Crud', 'list', array
         array('2', '', '', ''),
         array('2', '', $checkbox, 'checkbox','center',false),
         array('10', 'code', 'Codigo', 'getCode'),
+array('14', 'area_origen_name'  , 'Area Origen'     , 'getAreaOrigenName'            ),
+    array('14', 'area_destino_name' , 'Area Destino'    , 'getAreaDestinoName'           ),        
         array('20', 'created_at', 'Fecha Emisi&oacute;n', 'getFormattedDatetime'),
         array('20', 'subject', 'Asunto', 'getSubject'),
         array('5', 'documents_number', '# Docs', 'getDocumentsNumber'),
@@ -110,14 +120,22 @@ include_component('Crud', 'list', array
                 $("[name='seleccion[]']").each(function()
                 {
                     this.checked = true;
+                   // alert("abcd");
+                    toggleSlug(this, 'record_slug');
+                /*    alert("1111");
                     $("[name='seleccion[]']").attr('checked', 'checked');
+                    $("[name='seleccion[]']").parent().parent().addClass('selected');*/
                 });
             }
             else
             {
                 $("[name='seleccion[]']").each(function()
                 {
-                    $("[name='seleccion[]']").attr('checked', '');
+                    this.checked = false;
+                    toggleSlug(this, 'record_slug');
+                    //$("[name='seleccion[]']").attr('checked', '');
+                    //$("[name='seleccion[]']").parent().parent().removeClass('selected');
+                    //toggleSlug($("[name='seleccion[]']"), 'record_slug');
                 });
             }
             

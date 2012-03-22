@@ -109,6 +109,19 @@ class RecordTable extends DoctrineTable
         }
       
     }
+
+    if($params['area'])
+    {
+        if($params['tipo'] == 1)
+        {
+          $q->andWhere('r.to_area_id = ?', $params['area']);          
+        }
+        elseif ($params['tipo'] == 0) {
+            $q->andWhere('r.from_area_id = ?', $params['area']);          
+        }
+      
+    }
+    
     $area_id = sfContext::getInstance()->getUser()->getAreaId();
     
     $q->andWhere('(r.from_area_id = ? OR r.to_area_id = ?)', array($area_id, $area_id));

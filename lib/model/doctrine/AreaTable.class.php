@@ -48,4 +48,16 @@ class AreaTable extends DoctrineTable
     $q->addSelect("a.*, CONCAT(t.firstname,' ', t.lastname) representative_name")
       ->leftJoin('a.Representative t');
   } 
+  
+  function getListOfAreas()
+  {
+      $q = $this->createQuery('a')->addSelect('a.id, a.name');
+      $datos = $q->execute();
+      $result = array();
+      foreach($datos as $dato)
+      {
+          $result[$dato->getId()] = $dato->getName();
+      }
+      return $result;
+  }
 }

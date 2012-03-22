@@ -10,7 +10,7 @@
     <div class="ui-widget"  style="width: 477px;padding: 10px 25px 25px;">
     <div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
     <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
-    <strong>Gracias!</strong> <?php echo $sf_user->getFlash('notice') ?></p>
+    <strong>Bien!</strong> <?php echo $sf_user->getFlash('notice') ?></p>
     </div>
     </div>    
   <?php endif; ?> 

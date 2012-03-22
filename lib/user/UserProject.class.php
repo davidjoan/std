@@ -34,6 +34,7 @@ class UserProject extends sfUserExt
   {
     $this->setAttribute('user_id' , $user->getId()            , ActionsProject::USER_NAMESPACE);
     $this->setAttribute('area_id' , $user->getArea()->getId() , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('area_name' , $user->getArea()->getName() , ActionsProject::USER_NAMESPACE);
     $this->setAttribute('username', $user->getUsername()      , ActionsProject::USER_NAMESPACE);
     $this->setAttribute('email'   , $user->getEmail()         , ActionsProject::USER_NAMESPACE);
     $this->setAttribute('slug'    , $user->getSlug()          , ActionsProject::USER_NAMESPACE);
@@ -57,6 +58,11 @@ class UserProject extends sfUserExt
   {
     return $this->getAttribute('area_id' , $default, ActionsProject::USER_NAMESPACE);
   }
+  
+  public function getAreaName($default = null)
+  {
+    return $this->getAttribute('area_name' , $default, ActionsProject::USER_NAMESPACE);
+  }  
   
   public function getUsername($default = null)
   {

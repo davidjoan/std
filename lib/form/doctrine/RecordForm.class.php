@@ -47,7 +47,7 @@ class RecordForm extends BaseRecordForm
     (
       'id'                => new sfWidgetFormInputHidden(),
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
-      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+     // 'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
       'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
       'subject'           => new sfWidgetFormInput(array(), array('size' => '80')),
       'time_limit'        => new sfWidgetFormInput(array(), array('size' => '3','maxlength' => 3)),
@@ -83,7 +83,7 @@ class RecordForm extends BaseRecordForm
     (
       'id'                => new sfWidgetFormInputHidden(),
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
-      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+     // 'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
       'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
       'to_area_id'        => new sfWidgetFormValue(array('value' => $this->object->getToArea()->getName())), 
       'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
@@ -122,7 +122,7 @@ class RecordForm extends BaseRecordForm
     (
       'id'                => new sfWidgetFormInputHidden(),
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
-      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+    //  'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
       'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
       'to_area_id'        => new sfWidgetFormValue(array('value' => $this->object->getToArea()->getName())), 
       'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
@@ -163,7 +163,7 @@ class RecordForm extends BaseRecordForm
     (
       'id'                => new sfWidgetFormInputHidden(),
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
-      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+    //  'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
       'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
       'to_area_id'        => new sfWidgetFormValue(array('value' => $this->object->getToArea()->getName())), 
       'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
@@ -201,7 +201,7 @@ class RecordForm extends BaseRecordForm
     (
       'id'                => new sfWidgetFormInputHidden(),
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
-      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+   //   'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
       'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
       'to_area_id'        => new sfWidgetFormValue(array('value' => $this->object->getToArea()->getName())), 
       'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
@@ -240,14 +240,14 @@ class RecordForm extends BaseRecordForm
     (
       'id'                => new sfWidgetFormInputHidden(),
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
-      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+     // 'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
       'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
       'to_area_id'        => new sfWidgetFormDoctrineChoice
                               (
                                 array
                                 (
                                   'model' => 'Area',
-                               //   'add_empty' => '--- Seleccionar ---',
+                                  'add_empty' => '--- Seleccionar ---',
                                   'query' => Doctrine::getTable('Record')->getOtherAreas($area_id),
                                   'order_by' => array('Name', 'ASC')
                                 )
@@ -287,7 +287,7 @@ class RecordForm extends BaseRecordForm
     (
       'id'                => new sfWidgetFormInputHidden(),
       'code'              => new sfWidgetFormValue(array('value' => $this->object->getCode())),
-      'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
+    //  'user_id'           => new sfWidgetFormValue(array('value' => $this->object->getUser()->getName())),
       'from_area_id'      => new sfWidgetFormValue(array('value' => $this->object->getFromArea()->getName())),
       'to_area_id'        => new sfWidgetFormInputHidden(),
       'subject'           => new sfWidgetFormInput(array(), array('size' => '50')),
@@ -321,7 +321,8 @@ class RecordForm extends BaseRecordForm
     
 
       
-    //  $this->validatorSchema['time_limit']->setOption('required', true); 
+    //  $this->validatorSchema['time_limit']->setOption('required', true);
+      $this->validatorSchema['action']->setOption('required', true);
       $this->addDocumentsForm();
   }
   

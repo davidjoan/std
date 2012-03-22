@@ -18,14 +18,15 @@ class RecordActions extends ActionsCrud
       //Deb::print_r($this->status);
       if(!is_null($this->status))
       {
-      if($this->object->validation($this->status, $this->getUser()->getAreaId()))
-      {
-        $this->object->setStatus($this->status);    
-      }
-      else
-      {
-        $this->redirect($this->getEntranceRoute());          
-      }          
+        if($this->object->validation($this->status, $this->getUser()->getAreaId()))
+        {
+          $this->object->setStatus($this->status);    
+        }
+        else
+        {
+          $this->getUser()->setFlash('error', 'Lo sentimos esta operación no esta permitida.');
+          $this->redirect($this->getEntranceRoute());          
+        }          
       }
       
       
@@ -50,6 +51,11 @@ class RecordActions extends ActionsCrud
     $this->months = $datetime->getMonthsArray('MM');
     $this->days   = $datetime->getDaysArray();    
     Doctrine::getTable($this->modelClass)->updateQueryForList($q, $request->getParameterHolder()->getAll());
+  }
+  
+  protected function complementSave(sfWebRequest $request) {
+      parent::complementSave($request);
+      $this->getUser()->setFlash('notice', 'El expediente se procesó correctamente.');
   }
   
 

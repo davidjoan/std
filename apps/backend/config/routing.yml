@@ -22,13 +22,14 @@ record_show:
 
 
 record_list:
-  url:             /listar/expediente/:from/:to/:area/:record_status/:filter_by/:filter/:order_by/:order/:max/:page
+  url:             /listar/expediente/:from/:to/:area/:tipo/:record_status/:filter_by/:filter/:order_by/:order/:max/:page
   param:
     module:                  Record
     action:                  list
     from:                    0
     to:                      0
     area:                    0
+    tipo:                    0
     record_status:           0
     filter_by:               id 
     filter:                  0 
@@ -40,6 +41,7 @@ record_list:
     from:                    ((?:0[1-9]|[12][0-9]|3[01])[\-\/]((?:0[1-9]|1[0-2])[\-\/](?:(?:19|20)\d{2})|0)|0)
     to:                      ((?:0[1-9]|[12][0-9]|3[01])[\-\/]((?:0[1-9]|1[0-2])[\-\/](?:(?:19|20)\d{2})|0)|0)
     area:                    \d+
+    tipo:                    \d+
     record_status:           \d+
     filter_by:               \w+
     filter:                  '[\*\w]+'

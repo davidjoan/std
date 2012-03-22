@@ -41,7 +41,7 @@
             <?php echo link_to(image_tag('general/logo.jpg', array('height' => '50px')), 'http://www.seringsac.com/') ?>
         </td>
         <td class="right">
-            <?php echo image_tag('backend/secure_user.png') ?>&nbsp;<?php echo $sf_user->getUsername() ?>
+            <?php echo image_tag('backend/secure_user.png') ?>&nbsp;<?php echo $sf_user->getUsername() ?>/<?php echo $sf_user->getAreaName() ?>
         </td>
     </tr>
 </table>

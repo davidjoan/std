@@ -139,6 +139,7 @@ class DocumentForm extends BaseDocumentForm
       $this->validatorSchema['description']->setOption('required', true); 
       $this->validatorSchema['main']->setOption('required', true); 
       $this->validatorSchema['registration_type']->setOption('required', true); 
+      $this->validatorSchema['qty']->setOption('required', true); 
 
       
   }

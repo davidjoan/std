@@ -48,10 +48,10 @@ class ReportActions extends ActionsProject {
         $objPHPExcel->getActiveSheet()->getStyle('H10')->getFont()->setBold(true);
         $objPHPExcel->getActiveSheet()->getStyle('I10')->getFont()->setBold(true);
         
-        $init_row = 11;
+        $init_row = 10;
         foreach($records as $key => $record)
         {
-          $init_row = $init_row + $key;
+          $init_row++;
           
           $objPHPExcel->getActiveSheet()->setCellValue('B'.$init_row, $key+1);
           $objPHPExcel->getActiveSheet()->setCellValue('C'.$init_row, $record->getCode());
