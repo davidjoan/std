@@ -54,16 +54,9 @@ $checkbox = "<input type=\"checkbox\" value=\"nothings\" id=\"seleccionar_todo\"
     </tr>
     <tr>
         <td>Area:</td>
-        <td colspan="3"><?php echo select_doctrine_tag('area', 'Area', $sf_params->get('area')) ?></td>
+        <td colspan="3"><?php echo select_doctrine_tag('area', 'Area', $sf_params->get('area'),array('add_empty' => '--- Todos ---')) ?></td>
         <td><?php echo select_tag('tipo', array(0 => 'Origen', 1 => 'Destino'), $sf_params->get('tipo')) ?></td>
     </tr>    
-    <tr>
-        <td></td>
-        <td>
-            <?php //echo button_to_get_url('Buscar', $uri, $params, array('id' => 'button_list_search', 'class' => 'inputsubmit')) ?>
-        </td>
-
-    </tr>
 </table>
 <?php end_slot() ?>
 

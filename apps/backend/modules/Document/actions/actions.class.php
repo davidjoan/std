@@ -10,5 +10,8 @@
  */
 class DocumentActions extends ActionsCrud
 {
-    
+  protected function complementList(sfWebRequest $request, DoctrineQuery $q)
+  {
+    Doctrine::getTable($this->modelClass)->updateQueryForList($q, $request->getParameterHolder()->getAll());
+  }    
 }

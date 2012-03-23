@@ -156,10 +156,33 @@ document_show:
   param:           { module: Document, action: show }
   requirements:    { slug: \w+ }
   
+
 document_list:
-  url:             /listar/documentos/:filter_by/:filter/:order_by/:order/:max/:page
-  param:           { module: Document, action: list, filter_by: slug, filter: 0, order_by: code, order: a, max: 10, page: 1, rflow: on }
-  requirements:    { filter_by: \w+, filter: '[\*\w]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+  url:             /listar/documentos/:from/:to/:area/:document_class/:filter_by/:filter/:order_by/:order/:max/:page
+  param:
+    module:                  Document
+    action:                  list
+    from:                    0
+    to:                      0
+    area:                    0
+    document_class:          0
+    filter_by:               id 
+    filter:                  0 
+    order_by:                id
+    order:                   a
+    max:                     20 
+    page:                    1
+  requirements:
+    from:                    ((?:0[1-9]|[12][0-9]|3[01])[\-\/]((?:0[1-9]|1[0-2])[\-\/](?:(?:19|20)\d{2})|0)|0)
+    to:                      ((?:0[1-9]|[12][0-9]|3[01])[\-\/]((?:0[1-9]|1[0-2])[\-\/](?:(?:19|20)\d{2})|0)|0)
+    area:                    \d+
+    document_class:          \d+
+    filter_by:               \w+
+    filter:                  '[\*\w]+'
+    order_by:                \w+
+    order:                   \w+
+    page:                    \d+
+
 
 document_new:
   url:             /nuevo/documento

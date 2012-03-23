@@ -69,5 +69,32 @@ class DocumentTable extends DoctrineTable
     return sfConfig::get('app_document_path_path');
   }
   
+  public function updateQueryForList(DoctrineQuery $q, $params)
+  {
+       
+           
+      if($params['from'] <> '0' and $params['to'] <> '0')
+      {
+        $q->andIntervalWhere('d.created_at',$params['from'], $params['to']);    
+      }
+
+    if($params['document_class'])
+    {
+   
+          $q->andWhere('d.document_class_id = ?', $params['document_class']);
+    }
+    
+    if($params['area'])
+    {
+   
+          $q->andWhere('d.area_id = ?', $params['area']);
+    }
+    
+  //  $area_id = sfContext::getInstance()->getUser()->getAreaId();
+    
+  //  $q->andWhere('d.area_id = ?', array($area_id));
+    
+    return $q;
+  }  
     
 }
